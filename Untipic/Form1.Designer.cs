@@ -1,4 +1,9 @@
-﻿namespace Untipic
+﻿#if MONO
+using Untipic.UI.Mono.MetroUI;
+#else
+using Untipic.UI.Net.MetroUI;
+#endif
+namespace Untipic
 {
     partial class Form1
     {
@@ -28,7 +33,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new MetroButton();
             this.SuspendLayout();
             // 
             // button1
@@ -54,7 +59,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private MetroButton button1;
     }
 }
 
