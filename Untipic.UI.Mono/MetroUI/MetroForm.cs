@@ -35,5 +35,18 @@ namespace Untipic.UI.Mono.MetroUI
 {
     public class MetroForm : Form
     {
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            try // without ControlStyles.AllPaintingInWmPaint, we need our own error handling
+            {
+                // Clear all by white
+                e.Graphics.Clear(Color.White);
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex);
+                Invalidate();
+            }
+        }
     }
 }
