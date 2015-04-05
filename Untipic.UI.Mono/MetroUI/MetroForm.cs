@@ -35,6 +35,11 @@ namespace Untipic.UI.Mono.MetroUI
 {
     public class MetroForm : Form
     {
+		public MetroForm()
+		{
+			StartPosition = FormStartPosition.CenterScreen;
+		}
+
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             try // without ControlStyles.AllPaintingInWmPaint, we need our own error handling
