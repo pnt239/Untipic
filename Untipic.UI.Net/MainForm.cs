@@ -3,21 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-#if MONO
-using Untipic.UI.Mono.MetroUI;
-#else
-using Untipic.UI.Net.MetroUI;
-#endif
 
-namespace Untipic
+namespace Untipic.UI.Net
 {
-    public partial class Form1 : MetroForm
+    public partial class MainForm : Untipic.UI.Net.MetroUI.MetroForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
