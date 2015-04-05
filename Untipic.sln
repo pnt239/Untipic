@@ -12,18 +12,24 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Mono Debug|Any CPU = Mono Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Mono Debug|Any CPU.ActiveCfg = Mono Debug|Any CPU
+		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Mono Debug|Any CPU.Build.0 = Mono Debug|Any CPU
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Mono Debug|Any CPU.ActiveCfg = Mono Debug|Any CPU
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C59FD186-A4B4-4862-A579-6108E56A8C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59FD186-A4B4-4862-A579-6108E56A8C28}.Mono Debug|Any CPU.ActiveCfg = Mono Debug|Any CPU
+		{C59FD186-A4B4-4862-A579-6108E56A8C28}.Mono Debug|Any CPU.Build.0 = Mono Debug|Any CPU
 		{C59FD186-A4B4-4862-A579-6108E56A8C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59FD186-A4B4-4862-A579-6108E56A8C28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
