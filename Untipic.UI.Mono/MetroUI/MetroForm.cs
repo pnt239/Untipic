@@ -35,5 +35,9 @@ namespace Untipic.UI.Mono.MetroUI
 {
     public class MetroForm : Form
     {
+		public MetroForm()
+		{
+			StartPosition = FormStartPosition.CenterScreen;
+		}
     }
 }
