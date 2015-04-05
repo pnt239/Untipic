@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic", "Untipic\Untipic.csproj", "{2E015A0E-DA56-47EC-9494-3C844CECBC48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic.UI.Net", "Untipic.UI.Net\Untipic.UI.Net.csproj", "{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E015A0E-DA56-47EC-9494-3C844CECBC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
