@@ -126,6 +126,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Untipic.UI.Net\Untipic.UI.Net.csproj">
+      <Project>{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}</Project>
+      <Name>Untipic.UI.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
