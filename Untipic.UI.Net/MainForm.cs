@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Untipic.UI.Net
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MetroUI.MetroForm
     {
         public MainForm()
         {
