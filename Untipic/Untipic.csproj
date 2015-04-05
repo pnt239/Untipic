@@ -66,7 +66,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Untipic.UI">
+    <Reference Include="Untipic.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Untipic.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
