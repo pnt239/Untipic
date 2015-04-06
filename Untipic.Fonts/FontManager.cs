@@ -22,7 +22,7 @@ namespace Untipic.Fonts
 
         public Font GetFont(String family, float emSize, FontStyle style, GraphicsUnit unit)
         {
-            throw new NotImplementedException();
+            return new Font(family, emSize, style, unit);
         }
     }
 }
