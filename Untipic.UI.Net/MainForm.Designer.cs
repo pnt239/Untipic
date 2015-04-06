@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(420, 357);
+            this.Name = "MainForm";
+            this.Text = "Untipic";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
