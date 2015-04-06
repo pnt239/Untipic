@@ -62,10 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs" />
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UntiUI\UntiBorderStyle.cs" />
     <Compile Include="UntiUI\UntiButton.cs">
       <SubType>Component</SubType>
@@ -81,11 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UntiFonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Untipic.Presentation\Untipic.Presentation.csproj">

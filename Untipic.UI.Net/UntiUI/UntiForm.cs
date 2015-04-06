@@ -29,6 +29,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Untipic.Presentation;
 using Untipic.UI.Net.WinApi;
 
 namespace Untipic.UI.Net.UntiUI
@@ -50,7 +51,8 @@ namespace Untipic.UI.Net.UntiUI
         public UntiForm()
         {
             // Init default field's value
-            _backgroundColor = Color.White;
+            _theme = new ThemeManager();
+
             _borderColor = Color.FromArgb(0xcc, 0xcc, 0xcc);
             _borderWidth = BORDER_WIDTH;
             _formFont = new Font("Segoe UI Light", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -151,7 +153,7 @@ namespace Untipic.UI.Net.UntiUI
             try // without ControlStyles.AllPaintingInWmPaint, we need our own error handling
             {
                 // Clear all by white
-                e.Graphics.Clear(_backgroundColor);
+                e.Graphics.Clear(_theme.FormBackColor);
 
                 // Draw border
                 float iborder = _borderWidth*2;
@@ -402,9 +404,9 @@ namespace Untipic.UI.Net.UntiUI
         #region Privated Field
 
         /// <summary>
-        /// The background color
+        /// The theme manager
         /// </summary>
-        private Color _backgroundColor;
+        private ThemeManager _theme;
 
         /// <summary>
         /// The border color

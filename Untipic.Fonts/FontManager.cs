@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using Untipic.Presentation;
 
 namespace Untipic.Fonts
 {
-    public class FontManager
+    public class FontManager : IFontManager
     {
+        public Font GetFont(FontFamily family, float emSize, FontStyle style, GraphicsUnit unit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
