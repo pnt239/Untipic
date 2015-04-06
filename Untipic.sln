@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic", "Untipic\Untipic.csproj", "{2E015A0E-DA56-47EC-9494-3C844CECBC48}"
 	ProjectSection(ProjectDependencies) = postProject
+		{C59FD186-A4B4-4862-A579-6108E56A8C28} = {C59FD186-A4B4-4862-A579-6108E56A8C28}
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894} = {2DCBA1E4-719C-4A2D-99B9-16AF699A7894}
 	EndProjectSection
 EndProject
