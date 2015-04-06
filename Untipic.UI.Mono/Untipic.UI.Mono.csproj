@@ -74,5 +74,11 @@
     <Compile Include="WinApi\Messages.cs" />
     <Compile Include="WinApi\Structs.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Untipic.Presentation\Untipic.Presentation.csproj">
+      <Project>{84f3a66f-dc38-486a-8e4f-0490202d5d24}</Project>
+      <Name>Untipic.Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
