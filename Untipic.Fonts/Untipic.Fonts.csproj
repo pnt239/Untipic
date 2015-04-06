@@ -45,12 +45,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Open Sans License.txt" />
+    <EmbeddedResource Include="Resources\Open Sans License.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Open_Sans.ttf" />
-    <None Include="Resources\Open_Sans_Bold.ttf" />
-    <None Include="Resources\Open_Sans_Light.ttf" />
+    <EmbeddedResource Include="Resources\Open_Sans.ttf" />
+    <EmbeddedResource Include="Resources\Open_Sans_Bold.ttf" />
+    <EmbeddedResource Include="Resources\Open_Sans_Light.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

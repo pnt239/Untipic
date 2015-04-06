@@ -104,7 +104,7 @@ namespace Untipic.Presentation
 
         private Font CreateFontDefaultLight(float size)
         {
-            return _fontManager.GetFont("Segoe UI Light", size, FontStyle.Regular, GraphicsUnit.Pixel);
+            return _fontManager.GetFont(_fontManager.DefaultLightFont, size, FontStyle.Regular, GraphicsUnit.Pixel);
         }
     }
 }
