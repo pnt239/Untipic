@@ -15,6 +15,7 @@ namespace Untipic.UI.Mono
         public MainForm()
         {
             InitializeComponent();
+            lbTitle.Font = Theme.FormTitleFont;
         }
     }
 }

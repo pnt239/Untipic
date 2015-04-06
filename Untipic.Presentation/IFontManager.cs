@@ -1,9 +1,14 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Untipic.Presentation
 {
     public interface IFontManager
     {
-        Font GetFont(FontFamily family, float emSize, FontStyle style, GraphicsUnit unit);
+        String DefaultFont { get; }
+
+        String DefaultLightFont { get; }
+
+        Font GetFont(String family, float emSize, FontStyle style, GraphicsUnit unit);
     }
 }

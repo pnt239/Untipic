@@ -55,7 +55,6 @@ namespace Untipic.UI.Net.UntiUI
 
             _borderColor = Color.FromArgb(0xcc, 0xcc, 0xcc);
             _borderWidth = BORDER_WIDTH;
-            _formFont = new Font("Segoe UI Light", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             _formIconPosition = new Point(_borderWidth + 5, _borderWidth + 5);
             _formCaptionPosition = new PointF(_formIconPosition.X + Icon.Size.Width + 5, _formIconPosition.Y + 6f);
             _borderStyle = UntiBorderStyle.Sizable;
@@ -104,6 +103,8 @@ namespace Untipic.UI.Net.UntiUI
             get { return _borderWidth; }
             set { _borderWidth = value; }
         }
+
+        public ThemeManager Theme { get { return _theme; } }
 
         /// <summary>
         /// Gets or sets padding within the control.
@@ -169,8 +170,8 @@ namespace Untipic.UI.Net.UntiUI
 
                     // Draw Caption
                     using (var b = new SolidBrush(Color.Black))
-                    using (var f = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point, 0))
                     {
+                        var f = _theme.FormTitleFont;
                         e.Graphics.DrawString(Text, f, b, _formCaptionPosition);
                     }
                 }
@@ -417,8 +418,6 @@ namespace Untipic.UI.Net.UntiUI
         /// The border width
         /// </summary>
         private int _borderWidth;
-
-        private Font _formFont;
 
         /// <summary>
         /// The position of form's icon 

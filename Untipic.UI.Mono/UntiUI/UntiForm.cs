@@ -29,16 +29,26 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Untipic.Presentation;
 using Untipic.UI.Mono.WinApi;
 
 namespace Untipic.UI.Mono.UntiUI
 {
     public class UntiForm : Form
     {
+        /// <summary>
+        /// The theme manager
+        /// </summary>
+        private ThemeManager _theme;
+
 		public UntiForm()
 		{
+		    _theme = new ThemeManager();
+
 			StartPosition = FormStartPosition.CenterScreen;
 		}
+
+        public ThemeManager Theme { get { return _theme; } }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {

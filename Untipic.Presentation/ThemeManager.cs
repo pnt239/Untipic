@@ -11,7 +11,20 @@ namespace Untipic.Presentation
 {
     public class DefaultFontManager : IFontManager
     {
-        public Font GetFont(FontFamily family, float emSize, FontStyle style, GraphicsUnit unit)
+        private const string Default = "Segoe UI";
+        private const string DefaultLight = "Segoe UI Light";
+
+        public string DefaultFont
+        {
+            get { return Default; }
+        }
+
+        public string DefaultLightFont
+        {
+            get { return DefaultLight; }
+        }
+
+        public Font GetFont(String family, float emSize, FontStyle style, GraphicsUnit unit)
         {
             return new Font(family, emSize, style, unit);
         }
@@ -30,15 +43,23 @@ namespace Untipic.Presentation
         private Color _buttonPressColor;
         private Color _buttonDisableColor;
 
+        private Font _formTitleFont;
+        private Font _formDefaultFont;
+
         public ThemeManager()
         {
             InitFontManager();
             InitColor();
+            InitFont();
         }
 
         public Color FormBackColor { get { return _formBackColor; } }
 
         public Color FormForeColor { get { return _formForeColor; } }
+
+        public Font FormTitleFont { get { return _formTitleFont; } }
+
+        public Font FormDefaultFont { get { return _formDefaultFont; } }
 
         private void InitFontManager()
         {
@@ -68,6 +89,22 @@ namespace Untipic.Presentation
             _formForeColor = Color.Black;
 
 
+        }
+
+        private void InitFont()
+        {
+            _formTitleFont = CreateFontDefaultLight(24f);
+            _formDefaultFont = CreateFontDefault(12f);
+        }
+
+        private Font CreateFontDefault(float size)
+        {
+            return _fontManager.GetFont(_fontManager.DefaultFont, size, FontStyle.Regular, GraphicsUnit.Pixel);
+        }
+
+        private Font CreateFontDefaultLight(float size)
+        {
+            return _fontManager.GetFont("Segoe UI Light", size, FontStyle.Regular, GraphicsUnit.Pixel);
         }
     }
 }
