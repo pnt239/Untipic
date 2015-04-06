@@ -27,11 +27,11 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Net.MetroUI
+namespace Untipic.UI.Net.UntiUI
 {
-    public class MetroButton: Button
+    public class UntiButton: Button
     {
-        public MetroButton()
+        public UntiButton()
         {
             // Init default field's value
             HoverColor = Color.FromArgb(0xe6, 0xe6, 0xe6);

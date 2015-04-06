@@ -27,9 +27,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Net.MetroUI
+namespace Untipic.UI.Mono.UntiUI
 {
-    internal static class MetroExtensions
+    internal static class UntiExtensions
     {
         internal static TextFormatFlags AsTextFormatFlags(this ContentAlignment alignment)
         {

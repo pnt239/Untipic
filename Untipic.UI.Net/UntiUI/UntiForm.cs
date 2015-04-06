@@ -31,9 +31,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Untipic.UI.Net.WinApi;
 
-namespace Untipic.UI.Net.MetroUI
+namespace Untipic.UI.Net.UntiUI
 {
-    public class MetroForm : Form
+    public class UntiForm : Form
     {
         private enum WindowButtons
         {
@@ -45,9 +45,9 @@ namespace Untipic.UI.Net.MetroUI
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MetroForm"/> class.
+        /// Initializes a new instance of the <see cref="UntiForm"/> class.
         /// </summary>
-        public MetroForm()
+        public UntiForm()
         {
             // Init default field's value
             _backgroundColor = Color.White;
@@ -56,7 +56,7 @@ namespace Untipic.UI.Net.MetroUI
             _formFont = new Font("Segoe UI Light", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             _formIconPosition = new Point(_borderWidth + 5, _borderWidth + 5);
             _formCaptionPosition = new PointF(_formIconPosition.X + Icon.Size.Width + 5, _formIconPosition.Y + 6f);
-            _borderStyle = MetroBorderStyle.Sizable;
+            _borderStyle = UntiBorderStyle.Sizable;
 
             // Set serveral option for paint
             SetStyle(
@@ -73,7 +73,7 @@ namespace Untipic.UI.Net.MetroUI
         protected override void OnLoad(EventArgs e)
         {
             // Add window buttons
-            if (ControlBox && _borderStyle != MetroBorderStyle.None)
+            if (ControlBox && _borderStyle != UntiBorderStyle.None)
             {
                 AddWindowButton(WindowButtons.Close);
                 if (MaximizeBox) AddWindowButton(WindowButtons.Maximize);
@@ -91,7 +91,7 @@ namespace Untipic.UI.Net.MetroUI
         /// <value>
         /// The border style.
         /// </value>
-        public MetroBorderStyle BorderStyle
+        public UntiBorderStyle BorderStyle
         {
             get { return _borderStyle; }
             set { _borderStyle = value; }
@@ -115,7 +115,7 @@ namespace Untipic.UI.Net.MetroUI
             get { return base.Padding; }
             set
             {
-                value.Top = _borderStyle == MetroBorderStyle.None
+                value.Top = _borderStyle == UntiBorderStyle.None
                     ? Math.Max(value.Top, _borderWidth)
                     : Math.Max(value.Top, CAPTION_HEIGHT + _borderWidth);
                 base.Padding = value;
@@ -131,7 +131,7 @@ namespace Untipic.UI.Net.MetroUI
         {
             get
             {
-                if (_borderStyle == MetroBorderStyle.None)
+                if (_borderStyle == UntiBorderStyle.None)
                     return new Padding(_borderWidth, _borderWidth, _borderWidth, _borderWidth);
 
                 return new Padding(_borderWidth, _borderWidth + CAPTION_HEIGHT, _borderWidth, _borderWidth);
@@ -160,7 +160,7 @@ namespace Untipic.UI.Net.MetroUI
                 using (var p = new Pen(b, iborder))
                     e.Graphics.DrawRectangle(p, new Rectangle(0, 0, Width, Height));
 
-                if (_borderStyle != MetroBorderStyle.None)
+                if (_borderStyle != UntiBorderStyle.None)
                 {
                     // Draw Icon
                     e.Graphics.DrawIcon(Icon, _formIconPosition.X, _formIconPosition.Y);
@@ -254,7 +254,7 @@ namespace Untipic.UI.Net.MetroUI
 
             var sysmenuRec = new Rectangle(_formIconPosition, Icon.Size);
 
-            if (_borderStyle == MetroBorderStyle.Sizable)
+            if (_borderStyle == UntiBorderStyle.Sizable)
             {
                 if (topLeftRec.Contains(pc))
                     return HitTest.HTTOPLEFT;
@@ -328,7 +328,7 @@ namespace Untipic.UI.Net.MetroUI
 
         private void WindowButton_Click(object sender, EventArgs e)
         {
-            var btn = sender as MetroButton;
+            var btn = sender as UntiButton;
             if (btn == null) return;
             switch ((WindowButtons)btn.Tag)
             {
@@ -360,7 +360,7 @@ namespace Untipic.UI.Net.MetroUI
                 btnPostion.X = _windowButtons[(int) button - 1].Location.X - WINBUTTON_WIDTH;
             }
 
-            var newButton = new MetroButton
+            var newButton = new UntiButton
             {
                 Text = GetButtonText(button),
                 Font = new Font("Webdings", 9.25f),
@@ -431,12 +431,12 @@ namespace Untipic.UI.Net.MetroUI
         /// <summary>
         /// The form border style
         /// </summary>
-        private MetroBorderStyle _borderStyle;
+        private UntiBorderStyle _borderStyle;
 
         /// <summary>
         /// The window buttons (include close, mini, maxi buttons)
         /// </summary>
-        private readonly MetroButton[] _windowButtons = new MetroButton[3];
+        private readonly UntiButton[] _windowButtons = new UntiButton[3];
 
         /// <summary>
         /// The min track size

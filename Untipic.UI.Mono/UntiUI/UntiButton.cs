@@ -27,7 +27,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Mono.MetroUI
+namespace Untipic.UI.Mono.UntiUI
 {
     public class MetroButton: Button
     {

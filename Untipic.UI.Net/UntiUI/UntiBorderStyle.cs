@@ -23,9 +23,9 @@
  */
 #endregion
 
-namespace Untipic.UI.Net.MetroUI
+namespace Untipic.UI.Net.UntiUI
 {
-    public enum MetroBorderStyle
+    public enum UntiBorderStyle
     {
         None = 0,
         FixedSingle,

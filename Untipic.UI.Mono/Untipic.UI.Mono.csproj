@@ -58,15 +58,14 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MetroUI\MetroBorderStyle.cs" />
-    <Compile Include="MetroUI\MetroButton.cs">
+    <Compile Include="UntiUI\UntiBorderStyle.cs" />
+    <Compile Include="UntiUI\UntiButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MetroUI\MetroExtensions.cs" />
-    <Compile Include="MetroUI\MetroForm.cs">
+    <Compile Include="UntiUI\UntiExtensions.cs" />
+    <Compile Include="UntiUI\UntiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinApi\HitTest.cs" />
     <Compile Include="WinApi\Messages.cs" />

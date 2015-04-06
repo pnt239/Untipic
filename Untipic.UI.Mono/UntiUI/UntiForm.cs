@@ -31,11 +31,11 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Untipic.UI.Mono.WinApi;
 
-namespace Untipic.UI.Mono.MetroUI
+namespace Untipic.UI.Mono.UntiUI
 {
-    public class MetroForm : Form
+    public class UntiForm : Form
     {
-		public MetroForm()
+		public UntiForm()
 		{
 			StartPosition = FormStartPosition.CenterScreen;
 		}
