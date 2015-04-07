@@ -76,6 +76,18 @@
     </Compile>
     <Compile Include="UntiUI\Designer\MultiPanelDesigner.cs" />
     <Compile Include="UntiUI\Designer\MultiPanelPageDesigner.cs" />
+    <Compile Include="UntiUI\DrawPad\CommandObject.cs" />
+    <Compile Include="UntiUI\DrawPad\CursorTool.cs" />
+    <Compile Include="UntiUI\DrawPad\DrawPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UntiUI\DrawPad\DrawPad.Designer.cs">
+      <DependentUpon>DrawPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UntiUI\DrawPad\DrawPadCommand.cs" />
+    <Compile Include="UntiUI\DrawPad\GdiArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UntiUI\EventArguments\ColorToolEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\CommandChangedEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\ShapeToolEventArgs.cs" />
@@ -175,6 +187,7 @@
     <Content Include="Resources\ZoomIn.png" />
     <Content Include="Resources\ZoomOut.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
