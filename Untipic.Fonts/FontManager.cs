@@ -9,8 +9,8 @@ namespace Untipic.Fonts
 {
     public class FontManager : IFontManager
     {
-        private const string OpenSansRegular = "Open Sans";
-        private const string OpenSansLight = "Open Sans Light";
+        private const string OpenSansRegular = "Ubuntu";
+		private const string OpenSansLight = "Ubuntu";
         private const string OpenSansBold = "Open Sans Bold";
 
         private readonly PrivateFontCollection fontCollection = new PrivateFontCollection();
@@ -27,8 +27,8 @@ namespace Untipic.Fonts
 
         public Font GetFont(String family, float emSize, FontStyle style, GraphicsUnit unit)
         {
-            FontFamily fontFamily = GetFontFamily(family);
-            return new Font(fontFamily, emSize, style, unit);
+            //FontFamily fontFamily = GetFontFamily(family);
+			return new Font(family, emSize, style, unit);
         }
 
         private FontFamily GetFontFamily(string familyName)
