@@ -57,7 +57,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.statusBar = new UntiUI.UntiStatusStrip();
             this.nameBar = new Untipic.UI.UntiUI.UntiNameBar();
             this.tlpMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -394,7 +394,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TableLayoutPanel tlpView;
-        private System.Windows.Forms.StatusStrip statusBar;
+        private UntiUI.UntiStatusStrip statusBar;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;

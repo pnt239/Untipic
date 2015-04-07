@@ -29,5 +29,11 @@ namespace Untipic.UI.UntiUI
 {
     public class UntiStatusStrip : StatusStrip
     {
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+
+            e.Graphics.Clear(BackColor);
+        }
     }
 }
