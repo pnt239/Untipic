@@ -1,18 +1,19 @@
-﻿using Untipic.UI.UntiUI;
+﻿using System.Windows.Forms;
+using Untipic.UI.UntiUI;
 
 namespace Untipic.UI
 {
-    public sealed partial class MainForm : UntiForm
+	public sealed partial class MainForm : UntiForm
     {
-        public MainForm() : 
+		public MainForm() : 
 #if MONO
-            base (true)
+           base(true)
 #else
-            base(false)
+           base(false)
 #endif
         {
             InitializeComponent();
-            Font = this.Theme.FormDefaultFont;
+            //Font = this.Theme.FormDefaultFont;
         }
     }
 }
