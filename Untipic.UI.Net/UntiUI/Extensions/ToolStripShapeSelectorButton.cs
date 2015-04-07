@@ -1,0 +1,99 @@
+﻿#region Copyright (c) 2013 Pham Ngoc Thanh, https://github.com/panoti/DADHMT_LTW/
+/**
+ * UntiUI - Windows Modern UI for .NET WinForms applications
+ * Copyright (c) 2014 Pham Ngoc Thanh, https://github.com/panoti/DADHMT_LTW/
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of 
+ * this software and associated documentation files (the "Software"), to deal in the 
+ * Software without restriction, including without limitation the rights to use, copy, 
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+ * and to permit persons to whom the Software is furnished to do so, subject to the 
+ * following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in 
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ */
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using Untipic.EventArguments;
+using Untipic.UI.Net.UntiUI;
+using Untipic.UI.Net.UntiUI.Extensions;
+
+namespace Untipic.Controls
+{
+    /// <summary>
+    /// A ToolStripButton that can display a shape selector.
+    /// </summary>
+    public class ToolStripShapeSelectorButton : UntiToolStripDropDownButton
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolStripShapeSelectorButton"/> class.
+        /// </summary>
+        public ToolStripShapeSelectorButton()
+        {
+            // Create shape image list
+            _imgShape = new Dictionary<Core.ShapeType, Image>
+            {
+                {Core.ShapeType.Line, Properties.Resources.Line},
+                {Core.ShapeType.IsoscelesTriangle, Properties.Resources.Triangle},
+                {Core.ShapeType.Oblong, Properties.Resources.Quad},
+                {Core.ShapeType.Polygon, Properties.Resources.Polygon},
+                {Core.ShapeType.Ellipse, Properties.Resources.Ellipse}
+            };
+
+            // Create shape selector
+            var control = new ShapeSelectorControl();
+            control.ShapeSelected += control_ShapeSelected;
+
+            // Add to dropdown list
+            var dropdown = new ToolStripDropDown();
+            dropdown.Items.Add(new ToolStripControlHost(control));
+
+            DropDown = dropdown;
+        }
+
+        /// <summary>
+        /// Handles the ShapeSelected event of the control control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        void control_ShapeSelected(object sender, EventArgs e)
+        {
+            var shapee = (ShapeToolEventArgs)e;
+            Tag = shapee.Command;
+            Image = _imgShape[((Core.ShapeBase)shapee.Command.Reserve).GetShapeType()];
+
+            // Fire selected shape changed
+            base.OnDropDownItemClicked(new ToolStripItemClickedEventArgs(null));
+
+            DropDown.Close();
+        }
+
+        /// <summary>
+        /// Gets the screen coordinates, in pixels, of the upper-left corner of the <see cref="T:System.Windows.Forms.ToolStripDropDownItem" />.
+        /// </summary>
+        protected override Point DropDownLocation
+        {
+            get
+            {
+                var dropdownLocation = base.DropDownLocation;
+                dropdownLocation.X += 10;
+                return dropdownLocation;
+            }
+        }
+
+        private Dictionary<Core.ShapeType, Image> _imgShape;
+    }
+}
