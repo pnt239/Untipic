@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic", "Untipic\Untipic.
 		{2DCBA1E4-719C-4A2D-99B9-16AF699A7894} = {2DCBA1E4-719C-4A2D-99B9-16AF699A7894}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic.UI.Net", "Untipic.UI.Net\Untipic.UI.Net.csproj", "{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic.UI", "Untipic.UI\Untipic.UI.csproj", "{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untipic.UI.Mono", "Untipic.UI.Mono\Untipic.UI.Mono.csproj", "{C59FD186-A4B4-4862-A579-6108E56A8C28}"
 EndProject

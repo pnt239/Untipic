@@ -76,11 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Untipic.Fonts\Untipic.Fonts.csproj">
-      <Project>{24a4f8a9-b318-47d9-acde-d77257af1ac8}</Project>
+      <Project>{24A4F8A9-B318-47D9-ACDE-D77257AF1AC8}</Project>
       <Name>Untipic.Fonts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Untipic.Presentation\Untipic.Presentation.csproj">
-      <Project>{84f3a66f-dc38-486a-8e4f-0490202d5d24}</Project>
+      <Project>{84F3A66F-DC38-486A-8E4F-0490202D5D24}</Project>
       <Name>Untipic.Presentation</Name>
     </ProjectReference>
   </ItemGroup>
