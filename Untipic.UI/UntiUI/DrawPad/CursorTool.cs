@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Untipic.DrawPadTools
+namespace Untipic.UI.UntiUI.DrawPad
 {
     public class CursorTool
     {

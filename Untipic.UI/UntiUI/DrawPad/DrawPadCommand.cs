@@ -23,12 +23,7 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Untipic.DrawPadTools
+namespace Untipic.UI.UntiUI.DrawPad
 {
     public enum DrawPadCommand
     {

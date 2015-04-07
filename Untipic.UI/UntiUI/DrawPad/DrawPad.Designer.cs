@@ -1,4 +1,4 @@
-﻿namespace Untipic.Controls
+﻿namespace Untipic.UI.UntiUI.DrawPad
 {
     partial class DrawPad
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.gdiArea = new Untipic.Controls.GdiArea();
+            this.gdiArea = new GdiArea();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 

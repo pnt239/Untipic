@@ -24,22 +24,12 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Untipic.Core;
-using Untipic.DrawPadTools;
-using Untipic.Engine;
-using Untipic.EventArguments;
-using Visualization;
 
-namespace Untipic.Controls
+namespace Untipic.UI.UntiUI.DrawPad
 {
     public partial class DrawPad : UserControl
     {

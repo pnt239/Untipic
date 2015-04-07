@@ -1,15 +1,16 @@
 ﻿using System;
+using Untipic.UI.UntiUI.DrawPad;
 
 namespace Untipic.UI.UntiUI.EventArguments
 {
     public class CommandChangedEventArgs : EventArgs
     {
-        public CommandChangedEventArgs(DrawPadTools.DrawPadCommand command)
+        public CommandChangedEventArgs(DrawPadCommand command)
         {
             Command = command;
         }
 
-        public DrawPadTools.DrawPadCommand Command { get; set; }
+        public DrawPadCommand Command { get; set; }
     }
 
     public delegate void CommandChangedEventHandler(Object sender, CommandChangedEventArgs e);

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Untipic.Controls
+namespace Untipic.UI.UntiUI.DrawPad
 {
     public class GdiArea : Control
     {
