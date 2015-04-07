@@ -45,6 +45,9 @@ namespace Untipic.UI.UntiUI
 
         #region Constructor
 
+        public UntiForm() : this(false)
+        {
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="UntiForm"/> class.
         /// </summary>
