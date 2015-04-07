@@ -58,7 +58,7 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.label1 = new System.Windows.Forms.Label();
+            this.nameBar = new UntiUI.UntiNameBar();
             this.tlpMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tlpView.SuspendLayout();
@@ -73,7 +73,7 @@
             this.tlpMain.Controls.Add(this.toolStrip1, 0, 0);
             this.tlpMain.Controls.Add(this.tlpView, 0, 2);
             this.tlpMain.Controls.Add(this.statusStrip1, 0, 3);
-            this.tlpMain.Controls.Add(this.label1, 0, 1);
+            this.tlpMain.Controls.Add(this.nameBar, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(5, 65);
             this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
@@ -237,7 +237,7 @@
             this.tlpView.Name = "tlpView";
             this.tlpView.RowCount = 1;
             this.tlpView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpView.Size = new System.Drawing.Size(798, 472);
+            this.tlpView.Size = new System.Drawing.Size(798, 464);
             this.tlpView.TabIndex = 1;
             // 
             // toolStrip2
@@ -259,7 +259,7 @@
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(4, 0, 1, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(66, 472);
+            this.toolStrip2.Size = new System.Drawing.Size(66, 464);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -351,21 +351,26 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 541);
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.statusStrip1.Location = new System.Drawing.Point(0, 533);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(798, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(798, 30);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // label1
+            // nameBar
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(792, 30);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.nameBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.nameBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameBar.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBar.Location = new System.Drawing.Point(0, 39);
+            this.nameBar.Margin = new System.Windows.Forms.Padding(0);
+            this.nameBar.Name = "nameBar";
+            this.nameBar.ProjectName = "Untitled";
+            this.nameBar.Size = new System.Drawing.Size(465, 30);
+            this.nameBar.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -416,6 +421,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
-        private System.Windows.Forms.Label label1;
+        private UntiUI.UntiNameBar nameBar;
     }
 }

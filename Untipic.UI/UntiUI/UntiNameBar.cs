@@ -24,19 +24,14 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Untipic.Controls
+namespace Untipic.UI.UntiUI
 {
-    public partial class MetroNameBar : UserControl
+    public partial class UntiNameBar : UserControl
     {
-        public MetroNameBar()
+        public UntiNameBar()
         {
             InitializeComponent();
 

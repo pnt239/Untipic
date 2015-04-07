@@ -1,6 +1,6 @@
-﻿namespace Untipic.Controls
+﻿namespace Untipic.UI.UntiUI
 {
-    partial class MetroNameBar
+    partial class UntiNameBar
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.btnYes = new Untipic.MetroUI.MetroButton();
+            this.btnYes = new UntiUI.UntiButton();
             this.SuspendLayout();
             // 
             // txtName
@@ -72,7 +72,7 @@
             this.btnYes.Visible = false;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
-            // MetroNameBar
+            // UntiNameBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.txtName);
             this.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "MetroNameBar";
+            this.Name = "UntiNameBar";
             this.Size = new System.Drawing.Size(159, 33);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,7 +93,7 @@
 
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbName;
-        private MetroUI.MetroButton btnYes;
+        private UntiButton btnYes;
 
     }
 }
