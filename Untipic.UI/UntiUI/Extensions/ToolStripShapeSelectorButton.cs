@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Untipic.Entity;
 using Untipic.UI.UntiUI.EventArguments;
 
 namespace Untipic.UI.UntiUI.Extensions
@@ -42,13 +43,13 @@ namespace Untipic.UI.UntiUI.Extensions
         public ToolStripShapeSelectorButton()
         {
             // Create shape image list
-            _imgShape = new Dictionary<Core.ShapeType, Image>
+            _imgShape = new Dictionary<ShapeType, Image>
             {
-                {Core.ShapeType.Line, Properties.Resources.Line},
-                {Core.ShapeType.IsoscelesTriangle, Properties.Resources.Triangle},
-                {Core.ShapeType.Oblong, Properties.Resources.Quad},
-                {Core.ShapeType.Polygon, Properties.Resources.Polygon},
-                {Core.ShapeType.Ellipse, Properties.Resources.Ellipse}
+                {ShapeType.Line, Properties.Resources.Line},
+                {ShapeType.IsoscelesTriangle, Properties.Resources.Triangle},
+                {ShapeType.Oblong, Properties.Resources.Quad},
+                {ShapeType.Polygon, Properties.Resources.Polygon},
+                {ShapeType.Ellipse, Properties.Resources.Ellipse}
             };
 
             // Create shape selector
@@ -71,7 +72,7 @@ namespace Untipic.UI.UntiUI.Extensions
         {
             var shapee = (ShapeToolEventArgs)e;
             Tag = shapee.Command;
-            Image = _imgShape[((Core.ShapeBase)shapee.Command.Reserve).GetShapeType()];
+            Image = _imgShape[((ShapeBase)shapee.Command.Reserve).GetShapeType()];
 
             // Fire selected shape changed
             base.OnDropDownItemClicked(new ToolStripItemClickedEventArgs(null));
@@ -92,6 +93,6 @@ namespace Untipic.UI.UntiUI.Extensions
             }
         }
 
-        private Dictionary<Core.ShapeType, Image> _imgShape;
+        private Dictionary<ShapeType, Image> _imgShape;
     }
 }

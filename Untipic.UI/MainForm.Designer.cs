@@ -114,7 +114,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Untipic.UI.Net.Properties.Resources.New;
+            this.toolStripButton1.Image = global::Untipic.UI.Properties.Resources.New;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
@@ -123,7 +123,7 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Untipic.UI.Net.Properties.Resources.Open;
+            this.toolStripButton2.Image = global::Untipic.UI.Properties.Resources.Open;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
@@ -132,7 +132,7 @@
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Untipic.UI.Net.Properties.Resources.Save;
+            this.toolStripButton3.Image = global::Untipic.UI.Properties.Resources.Save;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
@@ -141,7 +141,7 @@
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Untipic.UI.Net.Properties.Resources.SaveAs;
+            this.toolStripButton4.Image = global::Untipic.UI.Properties.Resources.SaveAs;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
@@ -155,7 +155,7 @@
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::Untipic.UI.Net.Properties.Resources.Undo;
+            this.toolStripButton5.Image = global::Untipic.UI.Properties.Resources.Undo;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
@@ -164,7 +164,7 @@
             // toolStripButton6
             // 
             this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::Untipic.UI.Net.Properties.Resources.Redo;
+            this.toolStripButton6.Image = global::Untipic.UI.Properties.Resources.Redo;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
@@ -178,7 +178,7 @@
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::Untipic.UI.Net.Properties.Resources.ZoomIn;
+            this.toolStripButton7.Image = global::Untipic.UI.Properties.Resources.ZoomIn;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
@@ -187,7 +187,7 @@
             // toolStripButton8
             // 
             this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::Untipic.UI.Net.Properties.Resources.FitSize;
+            this.toolStripButton8.Image = global::Untipic.UI.Properties.Resources.FitSize;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
@@ -196,7 +196,7 @@
             // toolStripButton9
             // 
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::Untipic.UI.Net.Properties.Resources.ZoomOut;
+            this.toolStripButton9.Image = global::Untipic.UI.Properties.Resources.ZoomOut;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
@@ -210,7 +210,7 @@
             // toolStripButton10
             // 
             this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = global::Untipic.UI.Net.Properties.Resources.Font;
+            this.toolStripButton10.Image = global::Untipic.UI.Properties.Resources.Font;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
@@ -219,7 +219,7 @@
             // toolStripButton11
             // 
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton11.Image = global::Untipic.UI.Net.Properties.Resources.Accounts;
+            this.toolStripButton11.Image = global::Untipic.UI.Properties.Resources.Accounts;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(36, 36);
@@ -266,7 +266,7 @@
             // toolStripButton12
             // 
             this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = global::Untipic.UI.Net.Properties.Resources.Selection;
+            this.toolStripButton12.Image = global::Untipic.UI.Properties.Resources.Selection;
             this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Size = new System.Drawing.Size(55, 52);
@@ -275,7 +275,7 @@
             // toolStripButton13
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = global::Untipic.UI.Net.Properties.Resources.DirectSelection;
+            this.toolStripButton13.Image = global::Untipic.UI.Properties.Resources.DirectSelection;
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(55, 52);
@@ -284,7 +284,7 @@
             // toolStripButton14
             // 
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = global::Untipic.UI.Net.Properties.Resources.Text;
+            this.toolStripButton14.Image = global::Untipic.UI.Properties.Resources.Text;
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(55, 52);
@@ -293,7 +293,7 @@
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::Untipic.UI.Net.Properties.Resources.Line;
+            this.toolStripDropDownButton1.Image = global::Untipic.UI.Properties.Resources.Line;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(55, 52);
@@ -302,7 +302,7 @@
             // toolStripButton15
             // 
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton15.Image = global::Untipic.UI.Net.Properties.Resources.Brush;
+            this.toolStripButton15.Image = global::Untipic.UI.Properties.Resources.Brush;
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size(55, 52);
@@ -311,7 +311,7 @@
             // toolStripButton16
             // 
             this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton16.Image = global::Untipic.UI.Net.Properties.Resources.Eraser;
+            this.toolStripButton16.Image = global::Untipic.UI.Properties.Resources.Eraser;
             this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton16.Name = "toolStripButton16";
             this.toolStripButton16.Size = new System.Drawing.Size(55, 52);
@@ -320,7 +320,7 @@
             // toolStripButton17
             // 
             this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton17.Image = global::Untipic.UI.Net.Properties.Resources.Bucket;
+            this.toolStripButton17.Image = global::Untipic.UI.Properties.Resources.Bucket;
             this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton17.Name = "toolStripButton17";
             this.toolStripButton17.Size = new System.Drawing.Size(55, 52);

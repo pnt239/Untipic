@@ -28,6 +28,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using Untipic.Business;
+using Untipic.Entity;
+using Untipic.Presentation;
+using Untipic.UI.UntiUI.EventArguments;
 
 namespace Untipic.UI.UntiUI.DrawPad
 {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -29,10 +29,43 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
+    <Compile Include="ActionFactory.cs" />
+    <Compile Include="Action\AddUserAction.cs" />
+    <Compile Include="Action\AddVertexAction.cs" />
+    <Compile Include="Action\IAction.cs" />
+    <Compile Include="Action\IdentifyAction.cs" />
+    <Compile Include="Action\LoadControlBoxAction.cs" />
+    <Compile Include="Action\MouseMoveAction.cs" />
+    <Compile Include="Action\RemoveUserAction.cs" />
+    <Compile Include="Action\UpdateControlBoxAction.cs" />
+    <Compile Include="AppManament.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DrawingControl.cs" />
+    <Compile Include="EventArguments\ClientConnectedEventArgs.cs" />
+    <Compile Include="EventArguments\ClientConnectingEventArgs.cs" />
+    <Compile Include="EventArguments\ClientDisconnectedEventArgs.cs" />
+    <Compile Include="EventArguments\DataReceivedEventArgs.cs" />
+    <Compile Include="EventArguments\DataSentEventArgs.cs" />
+    <Compile Include="EventArguments\NetworkErrorEventArgs.cs" />
+    <Compile Include="EventArguments\ServerDisconnectedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="UserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Untipic.Entity\Untipic.Entity.csproj">
+      <Project>{40D1EDAE-EE92-43CC-B36F-238D7700E1D0}</Project>
+      <Name>Untipic.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Untipic.Presentation\Untipic.Presentation.csproj">
+      <Project>{84F3A66F-DC38-486A-8E4F-0490202D5D24}</Project>
+      <Name>Untipic.Presentation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

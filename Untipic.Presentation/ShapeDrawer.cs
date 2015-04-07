@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using Untipic.Entity;
 
 namespace Untipic.Presentation
 {

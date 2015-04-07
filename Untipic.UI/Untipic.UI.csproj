@@ -91,9 +91,22 @@
     <Compile Include="UntiUI\EventArguments\ColorToolEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\CommandChangedEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\ShapeToolEventArgs.cs" />
+    <Compile Include="UntiUI\Extensions\ColorEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UntiUI\Extensions\ColorEditorManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UntiUI\Extensions\ColorSelectorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UntiUI\Extensions\ColorToolControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UntiUI\Extensions\ColorWheel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UntiUI\Extensions\IColorEditor.cs" />
     <Compile Include="UntiUI\Extensions\MultiPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -101,6 +114,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UntiUI\Extensions\MultiPanelPagesCollection.cs" />
+    <Compile Include="UntiUI\Extensions\ShapeSelectorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UntiUI\Extensions\ToolStripFillButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -142,6 +158,14 @@
     <Compile Include="WinApi\Structs.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Untipic.Business\Untipic.Business.csproj">
+      <Project>{141EF59B-65A1-4334-AA5C-B311B6DC07A8}</Project>
+      <Name>Untipic.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Untipic.Entity\Untipic.Entity.csproj">
+      <Project>{40D1EDAE-EE92-43CC-B36F-238D7700E1D0}</Project>
+      <Name>Untipic.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Untipic.Presentation\Untipic.Presentation.csproj">
       <Project>{84F3A66F-DC38-486A-8E4F-0490202D5D24}</Project>
       <Name>Untipic.Presentation</Name>

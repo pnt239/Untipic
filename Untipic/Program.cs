@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Untipic.UI;
 
 namespace Untipic
 {
@@ -15,18 +16,9 @@ namespace Untipic
         [STAThread]
         static void Main()
         {
-            Assembly assembly = Assembly.LoadFrom("Untipic.UI.dll");
-#if MONO
-            Type type = assembly.GetType("Untipic.UI.Mono.MainForm");
-#else
-            Type type = assembly.GetType("Untipic.UI.Net.MainForm");
-#endif
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Form instanceOfMyType = (Form)Activator.CreateInstance(type);
-            Application.Run(instanceOfMyType);
+            Application.Run(new MainForm());
         }
     }
 }
