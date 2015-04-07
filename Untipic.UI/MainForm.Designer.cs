@@ -46,23 +46,23 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.tlpView = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.mtsTool = new Untipic.UI.UntiUI.UntiToolStrip();
+            this.tsbToolSelection = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolDirectSel = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolText = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolShape = new Untipic.UI.UntiUI.Extensions.ToolStripShapeSelectorButton();
+            this.tsbToolBrush = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolEraser = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolBucket = new Untipic.UI.UntiUI.UntiToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbToolOutline = new Untipic.UI.UntiUI.Extensions.ToolStripOutlineButton();
+            this.tsbToolFill = new Untipic.UI.UntiUI.Extensions.ToolStripFillButton();
             this.statusBar = new Untipic.UI.UntiUI.UntiStatusStrip();
             this.nameBar = new Untipic.UI.UntiUI.UntiNameBar();
             this.tlpMain.SuspendLayout();
             this.mtsEdit.SuspendLayout();
             this.tlpView.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
+            this.mtsTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -83,7 +83,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.Size = new System.Drawing.Size(798, 563);
+            this.tlpMain.Size = new System.Drawing.Size(897, 626);
             this.tlpMain.TabIndex = 3;
             // 
             // mtsEdit
@@ -109,7 +109,7 @@
             this.toolStripButton11});
             this.mtsEdit.Location = new System.Drawing.Point(0, 0);
             this.mtsEdit.Name = "mtsEdit";
-            this.mtsEdit.Size = new System.Drawing.Size(798, 39);
+            this.mtsEdit.Size = new System.Drawing.Size(897, 39);
             this.mtsEdit.TabIndex = 0;
             // 
             // toolStripButton1
@@ -231,132 +231,137 @@
             this.tlpView.ColumnCount = 2;
             this.tlpView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpView.Controls.Add(this.toolStrip2, 0, 0);
+            this.tlpView.Controls.Add(this.mtsTool, 0, 0);
             this.tlpView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpView.Location = new System.Drawing.Point(0, 69);
             this.tlpView.Margin = new System.Windows.Forms.Padding(0);
             this.tlpView.Name = "tlpView";
             this.tlpView.RowCount = 1;
             this.tlpView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpView.Size = new System.Drawing.Size(798, 464);
+            this.tlpView.Size = new System.Drawing.Size(897, 527);
             this.tlpView.TabIndex = 1;
             // 
-            // toolStrip2
+            // mtsTool
             // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton12,
-            this.toolStripButton13,
-            this.toolStripButton14,
-            this.toolStripDropDownButton1,
-            this.toolStripButton15,
-            this.toolStripButton16,
-            this.toolStripButton17,
+            this.mtsTool.AutoSize = false;
+            this.mtsTool.BackColor = System.Drawing.Color.White;
+            this.mtsTool.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mtsTool.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mtsTool.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.mtsTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbToolSelection,
+            this.tsbToolDirectSel,
+            this.tsbToolText,
+            this.tsbToolShape,
+            this.tsbToolBrush,
+            this.tsbToolEraser,
+            this.tsbToolBucket,
             this.toolStripSeparator4,
-            this.toolStripDropDownButton2,
-            this.toolStripDropDownButton3});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(4, 0, 1, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(66, 464);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
+            this.tsbToolOutline,
+            this.tsbToolFill});
+            this.mtsTool.Location = new System.Drawing.Point(0, 0);
+            this.mtsTool.Name = "mtsTool";
+            this.mtsTool.Padding = new System.Windows.Forms.Padding(4, 0, 1, 0);
+            this.mtsTool.Size = new System.Drawing.Size(60, 527);
+            this.mtsTool.TabIndex = 0;
             // 
-            // toolStripButton12
+            // tsbToolSelection
             // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = global::Untipic.UI.Properties.Resources.Selection;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton12.Text = "toolStripButton12";
+            this.tsbToolSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolSelection.Image = global::Untipic.UI.Properties.Resources.Selection;
+            this.tsbToolSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolSelection.IsDropDownButton = false;
+            this.tsbToolSelection.Name = "tsbToolSelection";
+            this.tsbToolSelection.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripButton13
+            // tsbToolDirectSel
             // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = global::Untipic.UI.Properties.Resources.DirectSelection;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton13.Text = "toolStripButton13";
+            this.tsbToolDirectSel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolDirectSel.Image = global::Untipic.UI.Properties.Resources.DirectSelection;
+            this.tsbToolDirectSel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolDirectSel.IsDropDownButton = false;
+            this.tsbToolDirectSel.Name = "tsbToolDirectSel";
+            this.tsbToolDirectSel.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripButton14
+            // tsbToolText
             // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = global::Untipic.UI.Properties.Resources.Text;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton14.Text = "toolStripButton14";
+            this.tsbToolText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolText.Image = global::Untipic.UI.Properties.Resources.Text;
+            this.tsbToolText.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolText.IsDropDownButton = false;
+            this.tsbToolText.Name = "tsbToolText";
+            this.tsbToolText.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripDropDownButton1
+            // tsbToolShape
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::Untipic.UI.Properties.Resources.Line;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(55, 52);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.tsbToolShape.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolShape.Image = global::Untipic.UI.Properties.Resources.Line;
+            this.tsbToolShape.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolShape.IsDropDownButton = true;
+            this.tsbToolShape.Name = "tsbToolShape";
+            this.tsbToolShape.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripButton15
+            // tsbToolBrush
             // 
-            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton15.Image = global::Untipic.UI.Properties.Resources.Brush;
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton15.Text = "toolStripButton15";
+            this.tsbToolBrush.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolBrush.Image = global::Untipic.UI.Properties.Resources.Brush;
+            this.tsbToolBrush.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolBrush.IsDropDownButton = false;
+            this.tsbToolBrush.Name = "tsbToolBrush";
+            this.tsbToolBrush.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripButton16
+            // tsbToolEraser
             // 
-            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton16.Image = global::Untipic.UI.Properties.Resources.Eraser;
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton16.Text = "toolStripButton16";
+            this.tsbToolEraser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolEraser.Image = global::Untipic.UI.Properties.Resources.Eraser;
+            this.tsbToolEraser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolEraser.IsDropDownButton = false;
+            this.tsbToolEraser.Name = "tsbToolEraser";
+            this.tsbToolEraser.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripButton17
+            // tsbToolBucket
             // 
-            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton17.Image = global::Untipic.UI.Properties.Resources.Bucket;
-            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(55, 52);
-            this.toolStripButton17.Text = "toolStripButton17";
+            this.tsbToolBucket.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolBucket.Image = global::Untipic.UI.Properties.Resources.Bucket;
+            this.tsbToolBucket.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolBucket.IsDropDownButton = false;
+            this.tsbToolBucket.Name = "tsbToolBucket";
+            this.tsbToolBucket.Size = new System.Drawing.Size(54, 52);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(55, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(54, 6);
             // 
-            // toolStripDropDownButton2
+            // tsbToolOutline
             // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(55, 52);
-            this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
+            this.tsbToolOutline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolOutline.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolOutline.Image")));
+            this.tsbToolOutline.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolOutline.IsDropDownButton = true;
+            this.tsbToolOutline.Name = "tsbToolOutline";
+            this.tsbToolOutline.OutlineColor = System.Drawing.Color.Black;
+            this.tsbToolOutline.OutlineDash = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.tsbToolOutline.OutlineWidth = 2F;
+            this.tsbToolOutline.Size = new System.Drawing.Size(54, 52);
             // 
-            // toolStripDropDownButton3
+            // tsbToolFill
             // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(61, 52);
-            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
+            this.tsbToolFill.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolFill.FillColor = System.Drawing.Color.Transparent;
+            this.tsbToolFill.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolFill.Image")));
+            this.tsbToolFill.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolFill.IsDropDownButton = true;
+            this.tsbToolFill.Name = "tsbToolFill";
+            this.tsbToolFill.Size = new System.Drawing.Size(54, 52);
             // 
             // statusBar
             // 
             this.statusBar.AutoSize = false;
             this.statusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.statusBar.Location = new System.Drawing.Point(0, 533);
+            this.statusBar.Location = new System.Drawing.Point(0, 596);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(798, 30);
+            this.statusBar.Size = new System.Drawing.Size(897, 30);
             this.statusBar.SizingGrip = false;
             this.statusBar.TabIndex = 2;
             // 
@@ -369,12 +374,12 @@
             this.nameBar.Margin = new System.Windows.Forms.Padding(0);
             this.nameBar.Name = "nameBar";
             this.nameBar.ProjectName = "Untitled";
-            this.nameBar.Size = new System.Drawing.Size(798, 30);
+            this.nameBar.Size = new System.Drawing.Size(897, 30);
             this.nameBar.TabIndex = 3;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(808, 633);
+            this.ClientSize = new System.Drawing.Size(907, 696);
             this.Controls.Add(this.tlpMain);
             this.Name = "MainForm";
             this.Text = "Untipic";
@@ -383,9 +388,8 @@
             this.mtsEdit.ResumeLayout(false);
             this.mtsEdit.PerformLayout();
             this.tlpView.ResumeLayout(false);
-            this.tlpView.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.mtsTool.ResumeLayout(false);
+            this.mtsTool.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -396,7 +400,7 @@
         private UntiUI.UntiToolStrip mtsEdit;
         private System.Windows.Forms.TableLayoutPanel tlpView;
         private UntiUI.UntiStatusStrip statusBar;
-        private System.Windows.Forms.ToolStrip toolStrip2;
+        private UntiUI.UntiToolStrip mtsTool;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
@@ -411,16 +415,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private UntiUI.UntiToolStripButton tsbToolSelection;
+        private UntiUI.UntiToolStripButton tsbToolDirectSel;
+        private UntiUI.UntiToolStripButton tsbToolText;
+        private UntiUI.Extensions.ToolStripShapeSelectorButton tsbToolShape;
+        private UntiUI.UntiToolStripButton tsbToolBrush;
+        private UntiUI.UntiToolStripButton tsbToolEraser;
+        private UntiUI.UntiToolStripButton tsbToolBucket;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private UntiUI.Extensions.ToolStripOutlineButton tsbToolOutline;
+        private UntiUI.Extensions.ToolStripFillButton tsbToolFill;
         private UntiUI.UntiNameBar nameBar;
     }
 }

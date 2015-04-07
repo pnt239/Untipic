@@ -46,7 +46,6 @@ namespace Untipic.UI.UntiUI.Extensions
             OutlineColor = Color.Black;
             OutlineDash = DashStyle.Solid;
             base.Image = GenerateThumbWidthColor(OutlineColor, OutlineWidth, OutlineDash);
-
             // Create size and color picker
             _control = new ColorToolControl(OutlineColor, OutlineWidth, OutlineDash);
             _control.ColorSelected += control_ColorSelected;
