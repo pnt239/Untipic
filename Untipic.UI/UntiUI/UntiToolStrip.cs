@@ -109,9 +109,9 @@ namespace Untipic.UI.UntiUI
         private float _borderWidth;
     }
 
-    public class MetroToolStrip : ToolStrip
+    public class UntiToolStrip : ToolStrip
     {
-        public MetroToolStrip()
+        public UntiToolStrip()
         {
             Renderer = new UntiToolStripRenderer();
         }

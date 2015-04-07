@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.mtsEdit = new Untipic.UI.UntiUI.UntiToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -57,10 +57,10 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.statusBar = new UntiUI.UntiStatusStrip();
+            this.statusBar = new Untipic.UI.UntiUI.UntiStatusStrip();
             this.nameBar = new Untipic.UI.UntiUI.UntiNameBar();
             this.tlpMain.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.mtsEdit.SuspendLayout();
             this.tlpView.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             this.tlpMain.BackColor = System.Drawing.Color.White;
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.toolStrip1, 0, 0);
+            this.tlpMain.Controls.Add(this.mtsEdit, 0, 0);
             this.tlpMain.Controls.Add(this.tlpView, 0, 2);
             this.tlpMain.Controls.Add(this.statusBar, 0, 3);
             this.tlpMain.Controls.Add(this.nameBar, 0, 1);
@@ -86,11 +86,13 @@
             this.tlpMain.Size = new System.Drawing.Size(798, 563);
             this.tlpMain.TabIndex = 3;
             // 
-            // toolStrip1
+            // mtsEdit
             // 
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mtsEdit.BackColor = System.Drawing.Color.White;
+            this.mtsEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtsEdit.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mtsEdit.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.mtsEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
@@ -105,11 +107,10 @@
             this.toolStripSeparator3,
             this.toolStripButton10,
             this.toolStripButton11});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(798, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.mtsEdit.Location = new System.Drawing.Point(0, 0);
+            this.mtsEdit.Name = "mtsEdit";
+            this.mtsEdit.Size = new System.Drawing.Size(798, 39);
+            this.mtsEdit.TabIndex = 0;
             // 
             // toolStripButton1
             // 
@@ -379,8 +380,8 @@
             this.Text = "Untipic";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.mtsEdit.ResumeLayout(false);
+            this.mtsEdit.PerformLayout();
             this.tlpView.ResumeLayout(false);
             this.tlpView.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -392,7 +393,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private UntiUI.UntiToolStrip mtsEdit;
         private System.Windows.Forms.TableLayoutPanel tlpView;
         private UntiUI.UntiStatusStrip statusBar;
         private System.Windows.Forms.ToolStrip toolStrip2;
