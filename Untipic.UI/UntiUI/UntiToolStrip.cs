@@ -115,5 +115,12 @@ namespace Untipic.UI.UntiUI
         {
             Renderer = new UntiToolStripRenderer();
         }
+
+		protected override void OnPaintBackground (PaintEventArgs e)
+		{
+			base.OnPaintBackground (e);
+
+			e.Graphics.Clear(this.BackColor);
+		}
     }
 }
