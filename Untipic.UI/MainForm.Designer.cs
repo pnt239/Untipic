@@ -57,8 +57,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.nameBar = new UntiUI.UntiNameBar();
+            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.nameBar = new Untipic.UI.UntiUI.UntiNameBar();
             this.tlpMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tlpView.SuspendLayout();
@@ -72,7 +72,7 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.toolStrip1, 0, 0);
             this.tlpMain.Controls.Add(this.tlpView, 0, 2);
-            this.tlpMain.Controls.Add(this.statusStrip1, 0, 3);
+            this.tlpMain.Controls.Add(this.statusBar, 0, 3);
             this.tlpMain.Controls.Add(this.nameBar, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(5, 65);
@@ -349,16 +349,15 @@
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(61, 52);
             this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
             // 
-            // statusStrip1
+            // statusBar
             // 
-            this.statusStrip1.AutoSize = false;
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.statusStrip1.Location = new System.Drawing.Point(0, 533);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(798, 30);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusBar.AutoSize = false;
+            this.statusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.statusBar.Location = new System.Drawing.Point(0, 533);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(798, 30);
+            this.statusBar.SizingGrip = false;
+            this.statusBar.TabIndex = 2;
             // 
             // nameBar
             // 
@@ -369,7 +368,7 @@
             this.nameBar.Margin = new System.Windows.Forms.Padding(0);
             this.nameBar.Name = "nameBar";
             this.nameBar.ProjectName = "Untitled";
-            this.nameBar.Size = new System.Drawing.Size(465, 30);
+            this.nameBar.Size = new System.Drawing.Size(798, 30);
             this.nameBar.TabIndex = 3;
             // 
             // MainForm
@@ -395,7 +394,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TableLayoutPanel tlpView;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
