@@ -261,7 +261,6 @@
             this.tsbToolFill});
             this.mtsTool.Location = new System.Drawing.Point(0, 0);
             this.mtsTool.Name = "mtsTool";
-            this.mtsTool.Padding = new System.Windows.Forms.Padding(4, 0, 1, 0);
             this.mtsTool.Size = new System.Drawing.Size(60, 527);
             this.mtsTool.TabIndex = 0;
             // 
@@ -272,7 +271,7 @@
             this.tsbToolSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolSelection.IsDropDownButton = false;
             this.tsbToolSelection.Name = "tsbToolSelection";
-            this.tsbToolSelection.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolSelection.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolDirectSel
             // 
@@ -281,7 +280,7 @@
             this.tsbToolDirectSel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolDirectSel.IsDropDownButton = false;
             this.tsbToolDirectSel.Name = "tsbToolDirectSel";
-            this.tsbToolDirectSel.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolDirectSel.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolText
             // 
@@ -290,7 +289,7 @@
             this.tsbToolText.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolText.IsDropDownButton = false;
             this.tsbToolText.Name = "tsbToolText";
-            this.tsbToolText.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolText.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolShape
             // 
@@ -299,7 +298,7 @@
             this.tsbToolShape.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolShape.IsDropDownButton = true;
             this.tsbToolShape.Name = "tsbToolShape";
-            this.tsbToolShape.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolShape.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolBrush
             // 
@@ -308,7 +307,7 @@
             this.tsbToolBrush.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolBrush.IsDropDownButton = false;
             this.tsbToolBrush.Name = "tsbToolBrush";
-            this.tsbToolBrush.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolBrush.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolEraser
             // 
@@ -317,7 +316,7 @@
             this.tsbToolEraser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolEraser.IsDropDownButton = false;
             this.tsbToolEraser.Name = "tsbToolEraser";
-            this.tsbToolEraser.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolEraser.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolBucket
             // 
@@ -326,34 +325,32 @@
             this.tsbToolBucket.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolBucket.IsDropDownButton = false;
             this.tsbToolBucket.Name = "tsbToolBucket";
-            this.tsbToolBucket.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolBucket.Size = new System.Drawing.Size(58, 52);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(54, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(58, 6);
             // 
             // tsbToolOutline
             // 
             this.tsbToolOutline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbToolOutline.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolOutline.Image")));
             this.tsbToolOutline.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolOutline.IsDropDownButton = true;
             this.tsbToolOutline.Name = "tsbToolOutline";
             this.tsbToolOutline.OutlineColor = System.Drawing.Color.Black;
             this.tsbToolOutline.OutlineDash = System.Drawing.Drawing2D.DashStyle.Solid;
             this.tsbToolOutline.OutlineWidth = 2F;
-            this.tsbToolOutline.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolOutline.Size = new System.Drawing.Size(58, 52);
             // 
             // tsbToolFill
             // 
             this.tsbToolFill.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbToolFill.FillColor = System.Drawing.Color.Transparent;
-            this.tsbToolFill.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolFill.Image")));
             this.tsbToolFill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolFill.IsDropDownButton = true;
             this.tsbToolFill.Name = "tsbToolFill";
-            this.tsbToolFill.Size = new System.Drawing.Size(54, 52);
+            this.tsbToolFill.Size = new System.Drawing.Size(58, 52);
             // 
             // statusBar
             // 
