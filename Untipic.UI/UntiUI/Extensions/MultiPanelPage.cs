@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Untipic.UI.Net.UntiUI.Designer;
+using Untipic.UI.UntiUI.Designer;
 
-namespace Untipic.UI.Net.UntiUI.Extensions
+namespace Untipic.UI.UntiUI.Extensions
 {
     [Designer(typeof(MultiPanelPageDesigner))]
     public class MultiPanelPage : ContainerControl

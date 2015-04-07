@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Untipic.EventArguments
+namespace Untipic.UI.UntiUI.EventArguments
 {
     public class CommandChangedEventArgs : EventArgs
     {

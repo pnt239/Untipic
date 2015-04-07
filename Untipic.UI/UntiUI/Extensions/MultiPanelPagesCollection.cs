@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Net.UntiUI.Extensions
+namespace Untipic.UI.UntiUI.Extensions
 {
     public class MultiPanelPagesCollection : Control.ControlCollection
     {

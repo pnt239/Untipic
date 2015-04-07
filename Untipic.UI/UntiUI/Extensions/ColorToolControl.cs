@@ -30,7 +30,7 @@ using System.Drawing.Drawing2D;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Net.UntiUI.Extensions
+namespace Untipic.UI.UntiUI.Extensions
 {
     /// <summary>
     /// Use for adjust size and select color to draw or fill the shape

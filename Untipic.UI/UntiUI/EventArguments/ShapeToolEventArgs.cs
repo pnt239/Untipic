@@ -24,9 +24,8 @@
 #endregion
 
 using System;
-using Untipic.DrawPadTools;
 
-namespace Untipic.EventArguments
+namespace Untipic.UI.UntiUI.EventArguments
 {
     /// <summary>
     /// Provides event information for events involving an selected shape.

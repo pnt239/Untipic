@@ -1,4 +1,4 @@
-﻿namespace Untipic.UI.Net
+﻿namespace Untipic.UI
 {
     sealed partial class MainForm
     {

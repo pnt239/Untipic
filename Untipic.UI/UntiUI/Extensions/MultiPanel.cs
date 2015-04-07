@@ -1,10 +1,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Untipic.Controls;
-using Untipic.UI.Net.UntiUI.Designer;
+using Untipic.UI.UntiUI.Designer;
 
-namespace Untipic.UI.Net.UntiUI.Extensions
+namespace Untipic.UI.UntiUI.Extensions
 {
     [Designer(typeof(MultiPanelDesigner))]
     public class MultiPanel : Panel

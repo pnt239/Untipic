@@ -23,7 +23,7 @@
  */
 #endregion
 
-namespace Untipic.UI.Net.UntiUI
+namespace Untipic.UI.UntiUI
 {
     public enum UntiBorderStyle
     {

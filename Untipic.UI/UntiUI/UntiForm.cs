@@ -32,7 +32,7 @@ using System.Windows.Forms;
 using Untipic.Presentation;
 using Untipic.UI.Net.WinApi;
 
-namespace Untipic.UI.Net.UntiUI
+namespace Untipic.UI.UntiUI
 {
     public class UntiForm : Form
     {
@@ -48,44 +48,60 @@ namespace Untipic.UI.Net.UntiUI
         /// <summary>
         /// Initializes a new instance of the <see cref="UntiForm"/> class.
         /// </summary>
-        public UntiForm()
+        public UntiForm(bool useSysWindow)
         {
+            _useSystemWindow = useSysWindow;
+
             // Init default field's value
             _theme = new ThemeManager();
 
-            _borderColor = Color.FromArgb(0xcc, 0xcc, 0xcc);
-            _borderWidth = BORDER_WIDTH;
-            _formIconPosition = new Point(_borderWidth + 5, _borderWidth + 5);
-            _formCaptionPosition = new PointF(_formIconPosition.X + Icon.Size.Width + 5, _formIconPosition.Y + 6f);
-            _borderStyle = UntiBorderStyle.Sizable;
+            if (useSysWindow)
+            {
+                // Do nothing
+            }
+            else
+            {
+                _borderColor = Color.FromArgb(0xcc, 0xcc, 0xcc);
+                _borderWidth = BORDER_WIDTH;
+                _formIconPosition = new Point(_borderWidth + 5, _borderWidth + 5);
+                _formCaptionPosition = new PointF(_formIconPosition.X + Icon.Size.Width + 5, _formIconPosition.Y + 6f);
+                _borderStyle = UntiBorderStyle.Sizable;
 
-            // Set serveral option for paint
-            SetStyle(
-                ControlStyles.AllPaintingInWmPaint |
-                ControlStyles.OptimizedDoubleBuffer |
-                ControlStyles.ResizeRedraw |  // <-- prevents size handle artifacts
-                ControlStyles.UserPaint, true);
-            
-            FormBorderStyle = FormBorderStyle.None;
+                // Set serveral option for paint
+                SetStyle(
+                    ControlStyles.AllPaintingInWmPaint |
+                    ControlStyles.OptimizedDoubleBuffer |
+                    ControlStyles.ResizeRedraw | // <-- prevents size handle artifacts
+                    ControlStyles.UserPaint, true);
+
+                FormBorderStyle = FormBorderStyle.None;
+            }
+
             StartPosition = FormStartPosition.CenterScreen;
         }
         #endregion
 
         protected override void OnLoad(EventArgs e)
         {
-            // Add window buttons
-            if (ControlBox && _borderStyle != UntiBorderStyle.None)
+            if (!_useSystemWindow)
             {
-                AddWindowButton(WindowButtons.Close);
-                if (MaximizeBox) AddWindowButton(WindowButtons.Maximize);
-                if (MinimizeBox) AddWindowButton(WindowButtons.Minimize);
+                // Add window buttons
+                if (ControlBox && _borderStyle != UntiBorderStyle.None)
+                {
+                    AddWindowButton(WindowButtons.Close);
+                    if (MaximizeBox) AddWindowButton(WindowButtons.Maximize);
+                    if (MinimizeBox) AddWindowButton(WindowButtons.Minimize);
+                }
             }
-
             base.OnLoad(e);
         }
 
         #region Properties
 
+        public Boolean UseSystemWindow
+        {
+            get { return _useSystemWindow; }
+        }
         /// <summary>
         /// The form border style
         /// </summary>
@@ -156,23 +172,26 @@ namespace Untipic.UI.Net.UntiUI
                 // Clear all by white
                 e.Graphics.Clear(_theme.FormBackColor);
 
-                // Draw border
-                float iborder = _borderWidth*2;
-                using (var b = new LinearGradientBrush(new Point(0, 0), new Point(Width, Height),
-                    _borderColor, Color.FromArgb(0xa4, 0xa4, 0xa4)))
-                using (var p = new Pen(b, iborder))
-                    e.Graphics.DrawRectangle(p, new Rectangle(0, 0, Width, Height));
-
-                if (_borderStyle != UntiBorderStyle.None)
+                if (!_useSystemWindow)
                 {
-                    // Draw Icon
-                    e.Graphics.DrawIcon(Icon, _formIconPosition.X, _formIconPosition.Y);
+                    // Draw border
+                    float iborder = _borderWidth*2;
+                    using (var b = new LinearGradientBrush(new Point(0, 0), new Point(Width, Height),
+                        _borderColor, Color.FromArgb(0xa4, 0xa4, 0xa4)))
+                    using (var p = new Pen(b, iborder))
+                        e.Graphics.DrawRectangle(p, new Rectangle(0, 0, Width, Height));
 
-                    // Draw Caption
-                    using (var b = new SolidBrush(Color.Black))
+                    if (_borderStyle != UntiBorderStyle.None)
                     {
-                        var f = _theme.FormTitleFont;
-                        e.Graphics.DrawString(Text, f, b, _formCaptionPosition);
+                        // Draw Icon
+                        e.Graphics.DrawIcon(Icon, _formIconPosition.X, _formIconPosition.Y);
+
+                        // Draw Caption
+                        using (var b = new SolidBrush(Color.Black))
+                        {
+                            var f = _theme.FormTitleFont;
+                            e.Graphics.DrawString(Text, f, b, _formCaptionPosition);
+                        }
                     }
                 }
             }
@@ -193,7 +212,7 @@ namespace Untipic.UI.Net.UntiUI
         protected override void WndProc(ref Message m)
         {
             // Not process in design mode
-            if (DesignMode)
+            if (DesignMode || _useSystemWindow)
             {
                 base.WndProc(ref m);
                 return;
@@ -408,6 +427,11 @@ namespace Untipic.UI.Net.UntiUI
         /// The theme manager
         /// </summary>
         private ThemeManager _theme;
+
+        /// <summary>
+        /// The _use system window
+        /// </summary>
+        private Boolean _useSystemWindow;
 
         /// <summary>
         /// The border color

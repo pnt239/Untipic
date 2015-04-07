@@ -27,11 +27,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Untipic.EventArguments;
-using Untipic.UI.Net.UntiUI;
-using Untipic.UI.Net.UntiUI.Extensions;
+using Untipic.UI.UntiUI.EventArguments;
 
-namespace Untipic.Controls
+namespace Untipic.UI.UntiUI.Extensions
 {
     /// <summary>
     /// A ToolStripButton that can display a shape selector.

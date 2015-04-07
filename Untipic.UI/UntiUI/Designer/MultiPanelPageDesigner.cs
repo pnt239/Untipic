@@ -5,10 +5,9 @@ using System.ComponentModel.Design;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using Untipic.Controls;
-using Untipic.UI.Net.UntiUI.Extensions;
+using Untipic.UI.UntiUI.Extensions;
 
-namespace Untipic.UI.Net.UntiUI.Designer
+namespace Untipic.UI.UntiUI.Designer
 {
     public class MultiPanelPageDesigner : ScrollableControlDesigner
     {

@@ -27,7 +27,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Untipic.UI.Net.UntiUI
+namespace Untipic.UI.UntiUI
 {
     public class UntiButton: Button
     {

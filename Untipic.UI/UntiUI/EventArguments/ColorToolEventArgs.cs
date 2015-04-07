@@ -24,12 +24,9 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 
-namespace Untipic.EventArguments
+namespace Untipic.UI.UntiUI.EventArguments
 {
     public class ColorToolEventArgs : EventArgs
     {

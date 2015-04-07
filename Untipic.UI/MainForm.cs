@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using Untipic.UI.UntiUI;
 
-namespace Untipic.UI.Net
+namespace Untipic.UI
 {
-    public sealed partial class MainForm : Untipic.UI.Net.UntiUI.UntiForm
+    public sealed partial class MainForm : UntiForm
     {
-        public MainForm()
+        public MainForm() : 
+#if MONO
+            base (true)
+#else
+            base(false)
+#endif
         {
             InitializeComponent();
             Font = this.Theme.FormDefaultFont;

@@ -29,7 +29,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Untipic.Presentation;
 
-namespace Untipic.UI.Net.UntiUI.Extensions
+namespace Untipic.UI.UntiUI.Extensions
 {
     public class ToolStripFillButton : UntiToolStripDropDownButton
     {
