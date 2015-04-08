@@ -56,6 +56,8 @@ namespace Untipic.UI.UntiUI.DrawPad
             _outlineColor = Color.Black;
             _outlineDash = DashStyle.Solid;
             _fillColor = Color.Transparent;
+
+            CreateNewPage(21F, 29.7F, MessureUnit.Cm, 37.62F);
         }
 
         public event MouseEventHandler GdiMouseMove = null;

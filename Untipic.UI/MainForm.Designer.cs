@@ -1,4 +1,6 @@
-﻿namespace Untipic.UI
+﻿using Untipic.UI.UntiUI.DrawPad;
+
+namespace Untipic.UI
 {
     sealed partial class MainForm
     {
@@ -59,6 +61,7 @@
             this.tsbToolFill = new Untipic.UI.UntiUI.Extensions.ToolStripFillButton();
             this.statusBar = new Untipic.UI.UntiUI.UntiStatusStrip();
             this.nameBar = new Untipic.UI.UntiUI.UntiNameBar();
+            this.drawPad = new DrawPad();
             this.tlpMain.SuspendLayout();
             this.mtsEdit.SuspendLayout();
             this.tlpView.SuspendLayout();
@@ -228,10 +231,12 @@
             // 
             // tlpView
             // 
-            this.tlpView.ColumnCount = 2;
+            this.tlpView.ColumnCount = 3;
             this.tlpView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpView.Controls.Add(this.mtsTool, 0, 0);
+            this.tlpView.Controls.Add(this.drawPad, 1, 0);
             this.tlpView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpView.Location = new System.Drawing.Point(0, 69);
             this.tlpView.Margin = new System.Windows.Forms.Padding(0);
@@ -335,6 +340,7 @@
             // tsbToolOutline
             // 
             this.tsbToolOutline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolOutline.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolOutline.Image")));
             this.tsbToolOutline.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolOutline.IsDropDownButton = true;
             this.tsbToolOutline.Name = "tsbToolOutline";
@@ -347,6 +353,7 @@
             // 
             this.tsbToolFill.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbToolFill.FillColor = System.Drawing.Color.Transparent;
+            this.tsbToolFill.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolFill.Image")));
             this.tsbToolFill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToolFill.IsDropDownButton = true;
             this.tsbToolFill.Name = "tsbToolFill";
@@ -374,6 +381,24 @@
             this.nameBar.Size = new System.Drawing.Size(897, 30);
             this.nameBar.TabIndex = 3;
             // 
+            // drawPad
+            // 
+            this.drawPad.AutoScroll = true;
+            this.drawPad.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            //this.drawPad.AutoScrollMinSize = new System.Drawing.Size(540, 240);
+            this.drawPad.BackColor = System.Drawing.SystemColors.Control;
+            this.drawPad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drawPad.Location = new System.Drawing.Point(63, 0);
+            this.drawPad.Margin = new System.Windows.Forms.Padding(0);
+            this.drawPad.Name = "drawPad";
+            this.drawPad.Size = new System.Drawing.Size(831, 527);
+            this.drawPad.TabIndex = 1;
+            //this.drawPad.Resolution = 0F;
+            //this.drawPad.ViewportHeith = 0;
+            //this.drawPad.ViewportWidth = 0;
+            this.drawPad.Zoom = 1F;
+
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(907, 696);
@@ -385,6 +410,7 @@
             this.mtsEdit.ResumeLayout(false);
             this.mtsEdit.PerformLayout();
             this.tlpView.ResumeLayout(false);
+            this.tlpView.PerformLayout();
             this.mtsTool.ResumeLayout(false);
             this.mtsTool.PerformLayout();
             this.ResumeLayout(false);
@@ -423,5 +449,6 @@
         private UntiUI.Extensions.ToolStripOutlineButton tsbToolOutline;
         private UntiUI.Extensions.ToolStripFillButton tsbToolFill;
         private UntiUI.UntiNameBar nameBar;
+        private DrawPad drawPad;
     }
 }
