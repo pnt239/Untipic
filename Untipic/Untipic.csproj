@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Untipic.UI\Untipic.UI.csproj">
-      <Project>{2dcba1e4-719c-4a2d-99b9-16af699a7894}</Project>
+      <Project>{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}</Project>
       <Name>Untipic.UI</Name>
     </ProjectReference>
   </ItemGroup>
