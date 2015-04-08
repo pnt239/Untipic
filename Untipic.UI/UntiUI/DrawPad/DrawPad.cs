@@ -239,7 +239,7 @@ namespace Untipic.UI.UntiUI.DrawPad
 
         private void gdiArea_Click(object sender, EventArgs e)
         {
-            Focus();
+            //Focus();
         }
 
         private void gdiArea_MouseDown(object sender, MouseEventArgs e)

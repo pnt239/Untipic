@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.gdiArea = new GdiArea();
+            this.gdiArea = new Untipic.UI.UntiUI.DrawPad.GdiArea();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,8 +71,7 @@
             // 
             // DrawPad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.BackColor = System.Drawing.SystemColors.Control;
