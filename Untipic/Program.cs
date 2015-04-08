@@ -15,10 +15,11 @@ namespace Untipic
         [STAThread]
         static void Main()
         {
-            Assembly assembly = Assembly.LoadFrom("Untipic.UI.dll");
 #if MONO
+			Assembly assembly = Assembly.LoadFrom("Untipic.UI.Mono.dll");
             Type type = assembly.GetType("Untipic.UI.Mono.MainForm");
 #else
+			Assembly assembly = Assembly.LoadFrom("Untipic.UI.dll");
             Type type = assembly.GetType("Untipic.UI.MainForm");
 #endif
 
