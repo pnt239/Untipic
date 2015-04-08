@@ -16,6 +16,7 @@ namespace Untipic
         [STAThread]
         static void Main()
         {
+			// Thanh
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
