@@ -103,12 +103,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Untipic.UI\Untipic.UI.csproj">
-      <Project>{2DCBA1E4-719C-4A2D-99B9-16AF699A7894}</Project>
-      <Name>Untipic.UI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
