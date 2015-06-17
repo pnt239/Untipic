@@ -33,13 +33,16 @@ namespace Untipic.UI
 
             panStartScreen.Tag = true;
             panNew.Tag = true;
+            panOpen.Tag = true;
+            panMessage.Tag = false;
+            panDraw.Tag = true;
 
             tsbNew.Tag = panNew;
-            //tsbOpen.Tag = panOpen;
+            tsbOpen.Tag = panOpen;
             //tsbSave.Tag = panSave;
             //tsbSaveAs.Tag = panSave;
 
-            SwitchPanel(panStartScreen);
+            SwitchPanel(panDraw);
         }
 
         private void SwitchPanel(Panel panel)
@@ -74,9 +77,9 @@ namespace Untipic.UI
             SwitchPanel(panel);
         }
 
-        private void btnNewCancel_Click(object sender, EventArgs e)
+        private void btnCreateSaveCancel_Click(object sender, EventArgs e)
         {
-            BackToPrePanel();
+            SwitchPanel(panStartScreen);
         }
     }
 }

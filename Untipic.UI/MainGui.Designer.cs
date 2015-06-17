@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGui));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.mtsEdit = new Untipic.UI.UntiUI.UntiToolStrip();
             this.tsbNew = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.tsbOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -46,6 +47,30 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.panBody = new System.Windows.Forms.Panel();
+            this.panDraw = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panMessage = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.untiButton3 = new Untipic.UI.UntiUI.UntiButton();
+            this.untiButton4 = new Untipic.UI.UntiUI.UntiButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panOpen = new System.Windows.Forms.Panel();
+            this.untiButton1 = new Untipic.UI.UntiUI.UntiButton();
+            this.untiButton2 = new Untipic.UI.UntiUI.UntiButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnOpenBrowse = new Untipic.UI.UntiUI.UntiButton();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label16 = new System.Windows.Forms.Label();
             this.panNew = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,17 +97,32 @@
             this.panStartScreen = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panOpen = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.mtsTool = new Untipic.UI.UntiUI.UntiToolStrip();
+            this.tsbToolSelection = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolDirectSel = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolText = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolShape = new Untipic.UI.UntiUI.Extensions.ToolStripShapeSelectorButton();
+            this.tsbToolBrush = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolEraser = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.tsbToolBucket = new Untipic.UI.UntiUI.UntiToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbToolOutline = new Untipic.UI.UntiUI.Extensions.ToolStripOutlineButton();
+            this.tsbToolFill = new Untipic.UI.UntiUI.Extensions.ToolStripFillButton();
             this.tlpMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.mtsEdit.SuspendLayout();
             this.panBody.SuspendLayout();
+            this.panDraw.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panMessage.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panOpen.SuspendLayout();
             this.panNew.SuspendLayout();
             this.panStartScreen.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.mtsTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -127,7 +167,7 @@
             this.mtsEdit.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.mtsEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNew,
-            this.toolStripButton2,
+            this.tsbOpen,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripSeparator1,
@@ -156,14 +196,16 @@
             this.tsbNew.ToolTipText = "Tạo dự án mới";
             this.tsbNew.Click += new System.EventHandler(this.tsbCreateSave_Click);
             // 
-            // toolStripButton2
+            // tsbOpen
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Untipic.UI.Properties.Resources.Open;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.tsbOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbOpen.Image = global::Untipic.UI.Properties.Resources.Open;
+            this.tsbOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbOpen.Name = "tsbOpen";
+            this.tsbOpen.Size = new System.Drawing.Size(36, 36);
+            this.tsbOpen.Text = "Open";
+            this.tsbOpen.ToolTipText = "Mở dự án";
+            this.tsbOpen.Click += new System.EventHandler(this.tsbCreateSave_Click);
             // 
             // toolStripButton3
             // 
@@ -264,10 +306,9 @@
             // panBody
             // 
             this.panBody.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panBody.Controls.Add(this.panDraw);
+            this.panBody.Controls.Add(this.panMessage);
             this.panBody.Controls.Add(this.panOpen);
-            this.panBody.Controls.Add(this.panel4);
-            this.panBody.Controls.Add(this.panel3);
-            this.panBody.Controls.Add(this.panel2);
             this.panBody.Controls.Add(this.panNew);
             this.panBody.Controls.Add(this.panStartScreen);
             this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -276,6 +317,285 @@
             this.panBody.Name = "panBody";
             this.panBody.Size = new System.Drawing.Size(544, 504);
             this.panBody.TabIndex = 1;
+            // 
+            // panDraw
+            // 
+            this.panDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panDraw.BackColor = System.Drawing.Color.White;
+            this.panDraw.Controls.Add(this.tableLayoutPanel4);
+            this.panDraw.Location = new System.Drawing.Point(0, 72);
+            this.panDraw.Name = "panDraw";
+            this.panDraw.Size = new System.Drawing.Size(544, 432);
+            this.panDraw.TabIndex = 5;
+            this.panDraw.Visible = false;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.mtsTool, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(544, 432);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(53, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(491, 432);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(34, 25);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(218, 391);
+            this.panel7.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(22, 33);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(189, 384);
+            this.panel6.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(307, 124);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(86, 239);
+            this.panel5.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(342, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(149, 432);
+            this.panel4.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(10, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(148, 382);
+            this.panel3.TabIndex = 0;
+            // 
+            // panMessage
+            // 
+            this.panMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panMessage.BackColor = System.Drawing.Color.White;
+            this.panMessage.Controls.Add(this.tableLayoutPanel3);
+            this.panMessage.Location = new System.Drawing.Point(19, 59);
+            this.panMessage.Name = "panMessage";
+            this.panMessage.Size = new System.Drawing.Size(525, 445);
+            this.panMessage.TabIndex = 4;
+            this.panMessage.Visible = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(525, 445);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.untiButton3);
+            this.panel1.Controls.Add(this.untiButton4);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 120);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(525, 205);
+            this.panel1.TabIndex = 0;
+            // 
+            // untiButton3
+            // 
+            this.untiButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.untiButton3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.untiButton3.Location = new System.Drawing.Point(419, 162);
+            this.untiButton3.Name = "untiButton3";
+            this.untiButton3.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.untiButton3.Size = new System.Drawing.Size(94, 32);
+            this.untiButton3.TabIndex = 14;
+            this.untiButton3.Text = "Cancel";
+            this.untiButton3.UseVisualStyleBackColor = true;
+            // 
+            // untiButton4
+            // 
+            this.untiButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.untiButton4.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.untiButton4.Location = new System.Drawing.Point(319, 162);
+            this.untiButton4.Name = "untiButton4";
+            this.untiButton4.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.untiButton4.Size = new System.Drawing.Size(94, 32);
+            this.untiButton4.TabIndex = 13;
+            this.untiButton4.Text = "OK";
+            this.untiButton4.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(49, 64);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(464, 87);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Message Content";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(26, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(143, 30);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Message Title";
+            // 
+            // panOpen
+            // 
+            this.panOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panOpen.BackColor = System.Drawing.Color.White;
+            this.panOpen.Controls.Add(this.untiButton1);
+            this.panOpen.Controls.Add(this.untiButton2);
+            this.panOpen.Controls.Add(this.listBox1);
+            this.panOpen.Controls.Add(this.btnOpenBrowse);
+            this.panOpen.Controls.Add(this.textBox7);
+            this.panOpen.Controls.Add(this.radioButton2);
+            this.panOpen.Controls.Add(this.radioButton1);
+            this.panOpen.Controls.Add(this.label16);
+            this.panOpen.Location = new System.Drawing.Point(37, 32);
+            this.panOpen.Name = "panOpen";
+            this.panOpen.Size = new System.Drawing.Size(507, 472);
+            this.panOpen.TabIndex = 2;
+            this.panOpen.Visible = false;
+            // 
+            // untiButton1
+            // 
+            this.untiButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.untiButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.untiButton1.Location = new System.Drawing.Point(401, 414);
+            this.untiButton1.Name = "untiButton1";
+            this.untiButton1.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.untiButton1.Size = new System.Drawing.Size(94, 32);
+            this.untiButton1.TabIndex = 12;
+            this.untiButton1.Text = "Cancel";
+            this.untiButton1.UseVisualStyleBackColor = true;
+            this.untiButton1.Click += new System.EventHandler(this.btnCreateSaveCancel_Click);
+            // 
+            // untiButton2
+            // 
+            this.untiButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.untiButton2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.untiButton2.Location = new System.Drawing.Point(301, 414);
+            this.untiButton2.Name = "untiButton2";
+            this.untiButton2.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.untiButton2.Size = new System.Drawing.Size(94, 32);
+            this.untiButton2.TabIndex = 11;
+            this.untiButton2.Text = "OK";
+            this.untiButton2.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 21;
+            this.listBox1.Location = new System.Drawing.Point(59, 152);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(436, 256);
+            this.listBox1.TabIndex = 6;
+            // 
+            // btnOpenBrowse
+            // 
+            this.btnOpenBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenBrowse.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnOpenBrowse.Location = new System.Drawing.Point(462, 90);
+            this.btnOpenBrowse.Name = "btnOpenBrowse";
+            this.btnOpenBrowse.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.btnOpenBrowse.Size = new System.Drawing.Size(33, 29);
+            this.btnOpenBrowse.TabIndex = 5;
+            this.btnOpenBrowse.Text = "...";
+            this.btnOpenBrowse.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.Location = new System.Drawing.Point(233, 90);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(223, 29);
+            this.textBox7.TabIndex = 4;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(59, 121);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(168, 25);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Open from network:";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(59, 90);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(168, 25);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Open from local file:";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(26, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(189, 30);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Open exist project";
             // 
             // panNew
             // 
@@ -412,7 +732,7 @@
             this.btnNewCancel.TabIndex = 10;
             this.btnNewCancel.Text = "Cancel";
             this.btnNewCancel.UseVisualStyleBackColor = true;
-            this.btnNewCancel.Click += new System.EventHandler(this.btnNewCancel_Click);
+            this.btnNewCancel.Click += new System.EventHandler(this.btnCreateSaveCancel_Click);
             // 
             // btnNewOK
             // 
@@ -552,34 +872,118 @@
     "i Untipic.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panOpen
+            // mtsTool
             // 
-            this.panOpen.BackColor = System.Drawing.Color.White;
-            this.panOpen.Location = new System.Drawing.Point(37, 32);
-            this.panOpen.Name = "panOpen";
-            this.panOpen.Size = new System.Drawing.Size(507, 472);
-            this.panOpen.TabIndex = 2;
+            this.mtsTool.AutoSize = false;
+            this.mtsTool.BackColor = System.Drawing.Color.White;
+            this.mtsTool.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mtsTool.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mtsTool.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.mtsTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbToolSelection,
+            this.tsbToolDirectSel,
+            this.tsbToolText,
+            this.tsbToolShape,
+            this.tsbToolBrush,
+            this.tsbToolEraser,
+            this.tsbToolBucket,
+            this.toolStripSeparator4,
+            this.tsbToolOutline,
+            this.tsbToolFill});
+            this.mtsTool.Location = new System.Drawing.Point(0, 0);
+            this.mtsTool.Name = "mtsTool";
+            this.mtsTool.Size = new System.Drawing.Size(53, 432);
+            this.mtsTool.TabIndex = 1;
             // 
-            // panel2
+            // tsbToolSelection
             // 
-            this.panel2.Location = new System.Drawing.Point(30, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(469, 305);
-            this.panel2.TabIndex = 3;
+            this.tsbToolSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolSelection.Image = global::Untipic.UI.Properties.Resources.Selection;
+            this.tsbToolSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolSelection.IsDropDownButton = false;
+            this.tsbToolSelection.Name = "tsbToolSelection";
+            this.tsbToolSelection.Size = new System.Drawing.Size(51, 52);
             // 
-            // panel3
+            // tsbToolDirectSel
             // 
-            this.panel3.Location = new System.Drawing.Point(19, 59);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(412, 270);
-            this.panel3.TabIndex = 4;
+            this.tsbToolDirectSel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolDirectSel.Image = global::Untipic.UI.Properties.Resources.DirectSelection;
+            this.tsbToolDirectSel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolDirectSel.IsDropDownButton = false;
+            this.tsbToolDirectSel.Name = "tsbToolDirectSel";
+            this.tsbToolDirectSel.Size = new System.Drawing.Size(51, 52);
             // 
-            // panel4
+            // tsbToolText
             // 
-            this.panel4.Location = new System.Drawing.Point(8, 72);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(356, 234);
-            this.panel4.TabIndex = 5;
+            this.tsbToolText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolText.Image = global::Untipic.UI.Properties.Resources.Text;
+            this.tsbToolText.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolText.IsDropDownButton = false;
+            this.tsbToolText.Name = "tsbToolText";
+            this.tsbToolText.Size = new System.Drawing.Size(51, 52);
+            // 
+            // tsbToolShape
+            // 
+            this.tsbToolShape.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolShape.Image = global::Untipic.UI.Properties.Resources.Line;
+            this.tsbToolShape.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolShape.IsDropDownButton = true;
+            this.tsbToolShape.Name = "tsbToolShape";
+            this.tsbToolShape.Size = new System.Drawing.Size(51, 52);
+            // 
+            // tsbToolBrush
+            // 
+            this.tsbToolBrush.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolBrush.Image = global::Untipic.UI.Properties.Resources.Brush;
+            this.tsbToolBrush.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolBrush.IsDropDownButton = false;
+            this.tsbToolBrush.Name = "tsbToolBrush";
+            this.tsbToolBrush.Size = new System.Drawing.Size(51, 52);
+            // 
+            // tsbToolEraser
+            // 
+            this.tsbToolEraser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolEraser.Image = global::Untipic.UI.Properties.Resources.Eraser;
+            this.tsbToolEraser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolEraser.IsDropDownButton = false;
+            this.tsbToolEraser.Name = "tsbToolEraser";
+            this.tsbToolEraser.Size = new System.Drawing.Size(51, 52);
+            // 
+            // tsbToolBucket
+            // 
+            this.tsbToolBucket.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolBucket.Image = global::Untipic.UI.Properties.Resources.Bucket;
+            this.tsbToolBucket.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolBucket.IsDropDownButton = false;
+            this.tsbToolBucket.Name = "tsbToolBucket";
+            this.tsbToolBucket.Size = new System.Drawing.Size(51, 52);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(51, 6);
+            // 
+            // tsbToolOutline
+            // 
+            this.tsbToolOutline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolOutline.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolOutline.Image")));
+            this.tsbToolOutline.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolOutline.IsDropDownButton = true;
+            this.tsbToolOutline.Name = "tsbToolOutline";
+            this.tsbToolOutline.OutlineColor = System.Drawing.Color.Black;
+            this.tsbToolOutline.OutlineDash = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.tsbToolOutline.OutlineWidth = 2F;
+            this.tsbToolOutline.Size = new System.Drawing.Size(52, 52);
+            // 
+            // tsbToolFill
+            // 
+            this.tsbToolFill.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToolFill.FillColor = System.Drawing.Color.Transparent;
+            this.tsbToolFill.Image = ((System.Drawing.Image)(resources.GetObject("tsbToolFill.Image")));
+            this.tsbToolFill.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbToolFill.IsDropDownButton = true;
+            this.tsbToolFill.Name = "tsbToolFill";
+            this.tsbToolFill.Size = new System.Drawing.Size(52, 52);
             // 
             // MainGui
             // 
@@ -595,11 +999,22 @@
             this.mtsEdit.ResumeLayout(false);
             this.mtsEdit.PerformLayout();
             this.panBody.ResumeLayout(false);
+            this.panDraw.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panMessage.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panOpen.ResumeLayout(false);
+            this.panOpen.PerformLayout();
             this.panNew.ResumeLayout(false);
             this.panNew.PerformLayout();
             this.panStartScreen.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.mtsTool.ResumeLayout(false);
+            this.mtsTool.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,7 +1026,7 @@
         private System.Windows.Forms.Panel panBody;
         private UntiUI.UntiToolStrip mtsEdit;
         private System.Windows.Forms.ToolStripButton tsbNew;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton tsbOpen;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -651,9 +1066,40 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panOpen;
+        private System.Windows.Forms.Panel panDraw;
+        private System.Windows.Forms.Panel panMessage;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label16;
+        private UntiUI.UntiButton untiButton1;
+        private UntiUI.UntiButton untiButton2;
+        private System.Windows.Forms.ListBox listBox1;
+        private UntiUI.UntiButton btnOpenBrowse;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label17;
+        private UntiUI.UntiButton untiButton3;
+        private UntiUI.UntiButton untiButton4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private UntiUI.UntiToolStrip mtsTool;
+        private UntiUI.UntiToolStripButton tsbToolSelection;
+        private UntiUI.UntiToolStripButton tsbToolDirectSel;
+        private UntiUI.UntiToolStripButton tsbToolText;
+        private UntiUI.Extensions.ToolStripShapeSelectorButton tsbToolShape;
+        private UntiUI.UntiToolStripButton tsbToolBrush;
+        private UntiUI.UntiToolStripButton tsbToolEraser;
+        private UntiUI.UntiToolStripButton tsbToolBucket;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private UntiUI.Extensions.ToolStripOutlineButton tsbToolOutline;
+        private UntiUI.Extensions.ToolStripFillButton tsbToolFill;
 
     }
 }
