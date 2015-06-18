@@ -96,6 +96,11 @@
     <Compile Include="UntiUI\EventArguments\ColorToolEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\CommandChangedEventArgs.cs" />
     <Compile Include="UntiUI\EventArguments\ShapeToolEventArgs.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\ItemInfo.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\ListBoxList.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\MessageListBox.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\ParseMessageEventArgs.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\ResizableListBox.cs" />
     <Compile Include="UntiUI\Extensions\ColorEditor.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,6 +201,8 @@
     <EmbeddedResource Include="UntiUI\DrawPad\DrawPad.resx">
       <DependentUpon>DrawPad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UntiUI\Extensions\AccountListBox\MessageListBox.resx" />
+    <EmbeddedResource Include="UntiUI\Extensions\AccountListBox\ResizableListBox.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Accounts.png" />

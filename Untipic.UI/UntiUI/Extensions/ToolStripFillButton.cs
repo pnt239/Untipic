@@ -31,56 +31,123 @@ using Untipic.Presentation;
 
 namespace Untipic.UI.UntiUI.Extensions
 {
-    public class ToolStripFillButton : UntiToolStripDropDownButton
+    //public class ToolStripFillButton : UntiToolStripDropDownButton
+    //{
+    //    public ToolStripFillButton()
+    //    {
+    //        FillColor = Color.Transparent;
+    //        base.Image = GenerateThumbWidthColor(FillColor);
+
+    //        // Create size and color picker
+    //        _control = new ColorToolControl(FillColor, 0, DashStyle.Solid, true);
+    //        _control.ColorSelected += control_ColorSelected;
+
+    //        // Add to dropdown list
+    //        var dropdown = new ToolStripDropDown();
+    //        dropdown.Items.Add(new ToolStripControlHost(_control));
+
+    //        DropDown = dropdown;
+    //    }
+
+    //    public event EventHandler FillChanged = null;
+
+    //    public Color FillColor { get; set; }
+
+    //    protected override void OnDropDownClosed(EventArgs e)
+    //    {
+    //        FillColor = _control.SelectedColor;
+    //        Image = GenerateThumbWidthColor(FillColor);
+    //        base.OnDropDownClosed(e);
+    //        OnOutlineChanged();
+    //    }
+
+    //    protected override Point DropDownLocation
+    //    {
+    //        get
+    //        {
+    //            var dropdownLocation = base.DropDownLocation;
+    //            dropdownLocation.X += 10;
+    //            return dropdownLocation;
+    //        }
+    //    }
+
+    //    private void OnOutlineChanged()
+    //    {
+    //        if (FillChanged != null)
+    //            FillChanged(this, EventArgs.Empty);
+    //    }
+
+    //    private void control_ColorSelected(object sender, EventArgs e)
+    //    {
+    //        DropDown.Close();
+    //        OnOutlineChanged();
+    //    }
+
+    //    private Image GenerateThumbWidthColor(Color colorfill)
+    //    {
+    //        Image img = new Bitmap(48, 48);
+
+    //        // Draw sample shape
+    //        using (var g = Graphics.FromImage(img))
+    //        {
+    //            g.SmoothingMode = SmoothingMode.AntiAlias;
+    //            g.Clear(Color.Transparent);
+
+    //            bool isNoFill = (colorfill.A == 0);
+    //            if (isNoFill)
+    //                colorfill = Color.FromArgb(0xcc, 0xcc, 0xcc);
+
+    //            using (var b = new SolidBrush(colorfill))
+    //            {
+    //                var path = Drawer.CreateLeaf(new Rectangle(5, 9, 38, 30), 20F);
+    //                g.FillPath(b, path);
+
+    //                var borderColor = new HslColor(colorfill);
+    //                borderColor.L -= 0.1F;
+
+    //                using (var p = new Pen(borderColor.ToRgbColor(), 2F))
+    //                    g.DrawPath(p, path);
+
+    //                if (isNoFill)
+    //                {
+    //                    using (var p = new Pen(Color.Red, 5F))
+    //                        g.DrawLine(p, 5, 9, 5 + 38, 9 + 30);
+    //                }
+    //            }
+    //        }
+    //        return img;
+    //    }
+
+    //    private readonly ColorToolControl _control;
+    //}
+
+    public class ToolStripFillButton : UntiToolStripButton
     {
         public ToolStripFillButton()
         {
-            FillColor = Color.Transparent;
-            base.Image = GenerateThumbWidthColor(FillColor);
-
-            // Create size and color picker
-            _control = new ColorToolControl(FillColor, 0, DashStyle.Solid, true);
-            _control.ColorSelected += control_ColorSelected;
-
-            // Add to dropdown list
-            var dropdown = new ToolStripDropDown();
-            dropdown.Items.Add(new ToolStripControlHost(_control));
-
-            DropDown = dropdown;
+            _fillColor = Color.Transparent;
+            base.Image = GenerateThumbWidthColor(_fillColor);
         }
 
         public event EventHandler FillChanged = null;
 
-        public Color FillColor { get; set; }
-
-        protected override void OnDropDownClosed(EventArgs e)
+        public Color FillColor
         {
-            FillColor = _control.SelectedColor;
-            Image = GenerateThumbWidthColor(FillColor);
-            base.OnDropDownClosed(e);
-            OnOutlineChanged();
-        }
-
-        protected override Point DropDownLocation
-        {
-            get
+            get { return _fillColor; }
+            set
             {
-                var dropdownLocation = base.DropDownLocation;
-                dropdownLocation.X += 10;
-                return dropdownLocation;
+                _fillColor = value;
+                OnFillChanged();
             }
         }
 
-        private void OnOutlineChanged()
+
+        private void OnFillChanged()
         {
+            Image = GenerateThumbWidthColor(_fillColor);
+
             if (FillChanged != null)
                 FillChanged(this, EventArgs.Empty);
-        }
-
-        private void control_ColorSelected(object sender, EventArgs e)
-        {
-            DropDown.Close();
-            OnOutlineChanged();
         }
 
         private Image GenerateThumbWidthColor(Color colorfill)
@@ -118,6 +185,6 @@ namespace Untipic.UI.UntiUI.Extensions
             return img;
         }
 
-        private readonly ColorToolControl _control;
+        private Color _fillColor;
     }
 }

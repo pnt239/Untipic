@@ -54,21 +54,21 @@ namespace Untipic.UI.UntiUI
 
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
-            //base.OnRenderToolStripBorder(e);
+            base.OnRenderToolStripBorder(e);
 
-            if (e.ToolStrip.Dock == DockStyle.Fill)
-                return;
+            //if (e.ToolStrip.Dock == DockStyle.Fill)
+            //    return;
 
-            using (var b = new SolidBrush(Color.FromArgb(0xcc, 0xcc, 0xcc)))
-            using (var p = new Pen(b, _borderWidth))
-            {
-                if (e.ToolStrip.Dock != DockStyle.Top)
-                    e.Graphics.DrawLine(p, 0, 0, e.AffectedBounds.Right, 0);
+            //using (var b = new SolidBrush(Color.FromArgb(0xcc, 0xcc, 0xcc)))
+            //using (var p = new Pen(b, _borderWidth))
+            //{
+            //    if (e.ToolStrip.Dock != DockStyle.Top)
+            //        e.Graphics.DrawLine(p, 0, 0, e.AffectedBounds.Right, 0);
 
-                e.Graphics.DrawLine(p, e.AffectedBounds.Right - 1, 0, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
-                e.Graphics.DrawLine(p, 0, e.AffectedBounds.Bottom - 1, e.AffectedBounds.Right, e.AffectedBounds.Bottom - 1);
-                //e.Graphics.DrawRectangle(p, 0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);
-            }
+            //    e.Graphics.DrawLine(p, e.AffectedBounds.Right - 1, 0, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
+            //    e.Graphics.DrawLine(p, 0, e.AffectedBounds.Bottom - 1, e.AffectedBounds.Right, e.AffectedBounds.Bottom - 1);
+            //    //e.Graphics.DrawRectangle(p, 0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);
+            //}
         }
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
@@ -79,19 +79,21 @@ namespace Untipic.UI.UntiUI
 
             var bounds = new Rectangle(Point.Empty, e.Item.Size);
 
-            Color backColor = Color.White;
-            
+            Color backColor = e.ToolStrip.BackColor;
+            Color hoverColor = Color.FromArgb(0xCD, 0xDD, 0xF7);
+
             var button = e.Item as ToolStripButton;
             // Check button is null value
             if (button == null) return;
 
             if (button.Pressed || button.Checked)
             {
-                backColor = Color.FromArgb(0x4d, 0x4d, 0x4d);
+                backColor = Color.FromArgb(hoverColor.R - 30, hoverColor.G - 30, hoverColor.B - 30);
             }
             else if (button.Selected)
             {
-                backColor = Color.FromArgb(0xe6, 0xe6, 0xe6);
+
+                backColor = hoverColor;
             }
 
             using (Brush b = new SolidBrush(backColor))
