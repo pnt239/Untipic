@@ -14,52 +14,49 @@
 //  Changed by R. Lelieveld, SimVA GmbH.
 //
 // ////////////////////////////////////////////////////////////////////////////
-using System;
-using System.Collections;
+
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ListBox
+namespace Untipic.UI.UntiUI.Extensions.AccountListBox
 {
 	/// <summary>
 	/// 
 	/// </summary>
-	public class MessageListBox : ResizableListBox 
+	public class AccountListBox : ResizableListBox 
 	{
-		private const int	m_MainTextOffset = 30;
-		private Font		m_HeadingFont;
-		private System.Windows.Forms.ImageList IconList;
-		private System.ComponentModel.IContainer components;
+		private const int	MainTextOffset = 30;
+        private readonly Font _headingFont;
+		private System.ComponentModel.IContainer _components = null;
+        private int _thumbImageSize = 48;
 
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public MessageListBox()
+		public AccountListBox()
 		{	
 			InitializeComponent();		
-			this.m_HeadingFont = new Font(this.Font, FontStyle.Bold);
-			this.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureItemHandler);
+			_headingFont = new Font(Font, FontStyle.Bold);
+			MeasureItem += MeasureItemHandler;
 		}
 
 
-		/// <summary>
+	    /// <summary>
 		/// Windows-Init.
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(MessageListBox));
-			this.IconList = new System.Windows.Forms.ImageList(this.components);
-			// 
-			// IconList
-			// 
-			this.IconList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-			this.IconList.ImageSize = new System.Drawing.Size(16, 16);
-			this.IconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IconList.ImageStream")));
-			this.IconList.TransparentColor = System.Drawing.Color.Transparent;
+            SuspendLayout();
+            ResumeLayout(false);
+
 		}
 
+        public int ThumbImageSize
+        {
+            get { return _thumbImageSize; }
+            set { _thumbImageSize = value; }
+        }
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -68,11 +65,11 @@ namespace ListBox
 		{
 			if( disposing )
 			{
-				if( components != null )
-					components.Dispose();
+				if( _components != null )
+					_components.Dispose();
 			}
 
-			m_HeadingFont.Dispose();
+			_headingFont.Dispose();
 
 			base.Dispose( disposing );
 		}
@@ -81,41 +78,47 @@ namespace ListBox
 		protected override void OnDrawItem( DrawItemEventArgs e)
 		{
 			e.DrawBackground();
-			e.DrawFocusRectangle();			
-			ParseMessageEventArgs item;
-			Rectangle bounds = e.Bounds;
-			Color TextColor = System.Drawing.SystemColors.ControlText;
+			e.DrawFocusRectangle();
+		    Rectangle bounds = e.Bounds;
+			Color textColor = SystemColors.ControlText;
 
-			item =  (ParseMessageEventArgs) Items[e.Index];
+			var item = Items[e.Index];
+
+            // Pre-process before paint
+		    var padding = 5;
+		    var imageLeft = bounds.Left + padding;
+		    var imageTop = bounds.Top + 5;
+		    var headerLeft = imageLeft + _thumbImageSize + padding;
+		    var headerTop = imageTop;
+            var textLeft = headerLeft;
+            var textTop = headerTop + Font.Height;
 
 			//draw selected item background
 			if(e.State == DrawItemState.Selected)
 			{
-				using ( Brush b = new SolidBrush(System.Drawing.SystemColors.Highlight) )
+				using ( Brush b = new SolidBrush(SystemColors.Highlight) )
 				{
 					// Fill background;
 					e.Graphics.FillRectangle(b, e.Bounds);
 				}	
-				TextColor = System.Drawing.SystemColors.HighlightText;
+				textColor = SystemColors.HighlightText;
 			}
 
 			//draw image
-			if ( item.MessageType != ParseMessageType.None)
-				IconList.Draw(
-					e.Graphics,
-					bounds.Left + 1,
-					bounds.Top + 2,
-					(int)item.MessageType); 
+		    if (item.ThumbImage != null)
+		    {
+                e.Graphics.DrawImage(item.ThumbImage, imageLeft, imageTop, _thumbImageSize, _thumbImageSize);
+		    }
 
-			using(SolidBrush TextBrush = new SolidBrush(TextColor))
+			using(var textBrush = new SolidBrush(textColor))
 			{
 				//draw Headline
 				e.Graphics.DrawString(
 					item.LineHeader,
-					m_HeadingFont,
-					TextBrush, 
-					bounds.Left + IconList.ImageSize.Width + 5,
-					bounds.Top + IconList.ImageSize.Height - m_HeadingFont.Height);
+					_headingFont,
+					textBrush,
+                    headerLeft,
+                    headerTop);
 
 				//draw main text
 				int LinesFilled=0,
@@ -123,13 +126,13 @@ namespace ListBox
 					top;
 
 				// Draw layout, 2 times the offset (left & right)
-				Size oneLine = new Size( this.Width - m_MainTextOffset*2, this.Font.Height);
+				Size oneLine = new Size( this.Width - MainTextOffset*2, this.Font.Height);
 
 				StringBuilder sbTextToDraw = new StringBuilder( item.MessageText);
 				string strLineToDraw;
 				int index1 = 0,
 					index2, index2New;
-				top = bounds.Top + IconList.ImageSize.Height + 2;
+                top = textTop;
 
 				while ( sbTextToDraw.Length > 0)
 				{
@@ -169,8 +172,8 @@ namespace ListBox
 					e.Graphics.DrawString(
 						strLineToDraw,
 						this.Font,
-						TextBrush,
-						bounds.Left + m_MainTextOffset,
+						textBrush,
+                        textLeft,
 						top);
 
 					// Adjust top
@@ -188,13 +191,12 @@ namespace ListBox
 		
 		private void MeasureItemHandler(object sender, MeasureItemEventArgs e)
 		{
-			int MainTextHeight;			
-			ParseMessageEventArgs item;
+		    ParseMessageEventArgs item;
 			item =  (ParseMessageEventArgs) Items[e.Index];
 			int LinesFilled, CharsFitted;
 			
 			// Draw layout, 2 times the offset (left & right)
-			Size sz = new Size( this.Width - m_MainTextOffset*2, this.Font.Height);
+			Size sz = new Size( this.Width - MainTextOffset*2, this.Font.Height);
 
 			StringBuilder sbTextToDraw = new StringBuilder( item.MessageText);
 			string strLineToDraw;
@@ -220,7 +222,7 @@ namespace ListBox
 
 				e.Graphics.MeasureString(
 					strLineToDraw,
-					this.Font,
+					Font,
 					sz,
 					StringFormat.GenericDefault,
 					out CharsFitted,
@@ -243,9 +245,9 @@ namespace ListBox
 			sbTextToDraw = null;
 			strLineToDraw = null;
 
-			MainTextHeight = lines * this.Font.Height;
+			var mainTextHeight = lines * Font.Height;
 
-			e.ItemHeight = IconList.ImageSize.Height + MainTextHeight + 4;
+            e.ItemHeight = _thumbImageSize + mainTextHeight + 4;
 			e.ItemWidth = sz.Width;
 		}
 		#endregion

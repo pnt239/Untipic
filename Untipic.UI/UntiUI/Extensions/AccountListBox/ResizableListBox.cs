@@ -14,12 +14,13 @@
 //  Changed by R. Lelieveld, SimVA GmbH.
 //
 // ////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ListBox
+namespace Untipic.UI.UntiUI.Extensions.AccountListBox
 {
 	/// <summary>
 	/// This is our base class. It tries to mimick the behaviour of a standard ListBox. It's
@@ -27,16 +28,16 @@ namespace ListBox
 	/// This class alone does NOT implement resizable listbox entries. It just provides the base
 	/// for an inheriting class.
 	/// </summary>
-	public class ResizableListBox : System.Windows.Forms.Panel
+	public class ResizableListBox : Panel
 	{
 		//our data containers - exposed via properties
-		private ListBoxList	m_Items = new ListBoxList();
-		private ArrayList	m_SelectedItems = new ArrayList();
-		private ArrayList	m_SelectedItemIndices = new ArrayList();
+		private readonly ListBoxList	_items = new ListBoxList();
+		private readonly ArrayList	_selectedItems = new ArrayList();
+		private readonly ArrayList	_selectedItemIndices = new ArrayList();
 
 		//just for internal use
-		private bool		m_CtrlPressed = false;
-		private bool		m_AllowMultiSelect = true;
+		private bool		_ctrlPressed;
+		private bool		_allowMultiSelect = true;
 
 		/// <summary>
 		/// The ctor.
@@ -50,11 +51,11 @@ namespace ListBox
 
 
 			//set some defaults			
-			this.BackColor = System.Drawing.Color.White;
-			this.AutoScroll = true;
-			this.HScroll = false;
+			BackColor = Color.White;
+			AutoScroll = true;
+			HScroll = false;
 
-			this.m_Items.OnItemInserted += new InsertEventHandler( this.ItemInserted);
+			_items.OnItemInserted += ItemInserted;
 		}
 
 		#region Events
@@ -73,7 +74,7 @@ namespace ListBox
 		protected override void OnKeyDown(KeyEventArgs e)
 		{
 			base.OnKeyDown(e);
-			m_CtrlPressed = e.Control;
+			_ctrlPressed = e.Control;
 		}
 
 
@@ -84,7 +85,7 @@ namespace ListBox
 		protected override void OnKeyUp(KeyEventArgs e)
 		{
 			base.OnKeyUp(e);
-			m_CtrlPressed = e.Control;
+			_ctrlPressed = e.Control;
 		}
 
 
@@ -98,7 +99,7 @@ namespace ListBox
 			base.OnMouseDown(e);
 			
 			//make sure we receive key events
-			this.Focus();
+			Focus();
 
 			if(e.Button != MouseButtons.Left) 
 				return;
@@ -109,9 +110,9 @@ namespace ListBox
 			if(index < 0)
 				return;
 						
-			if((m_CtrlPressed) && m_AllowMultiSelect)
+			if((_ctrlPressed) && _allowMultiSelect)
 			{
-				if(m_SelectedItemIndices.Contains(index))
+				if(_selectedItemIndices.Contains(index))
 				{
 					RemoveSelectedItem(index);
 				}
@@ -122,16 +123,16 @@ namespace ListBox
 			}
 			else
 			{
-				if((m_SelectedItemIndices.Contains(index)) && (m_SelectedItemIndices.Count == 1))
+				if((_selectedItemIndices.Contains(index)) && (_selectedItemIndices.Count == 1))
 					return;
 
-				m_SelectedItemIndices.Clear();
-				m_SelectedItems.Clear();
+				_selectedItemIndices.Clear();
+				_selectedItems.Clear();
 
 				AddSelectedItem(index);
 			}
 
-			this.Invalidate();
+			Invalidate();
 		
 		}
 
@@ -148,44 +149,44 @@ namespace ListBox
 			
 			Graphics g = pe.Graphics;
 			Rectangle bounds = new Rectangle();
-			int posScrollY = this.AutoScrollPosition.Y;
+			int posScrollY = AutoScrollPosition.Y;
 			int height = 0;
 
 			//clear background
-			using ( Brush b = new SolidBrush(this.BackColor) )
+			using ( Brush b = new SolidBrush(BackColor) )
 			{
 				// Fill background;
-				g.FillRectangle(b, this.ClientRectangle);
+				g.FillRectangle(b, ClientRectangle);
 			}			
 
 			//draw our items
 			int i = 0;
 			int iItemHeight;
-			while ( i < m_Items.Count)
+			while ( i < _items.Count)
 			{
 				// measure only when neccesary
-				if ( !m_Items.Info(i).HeightValid)
+				if ( !_items.Info(i).HeightValid)
 				{
 					MeasureItemEventArgs miea = new MeasureItemEventArgs( g, i);
 					OnMeasureItem( miea);
 				}
-				iItemHeight = m_Items.Info(i).Height;
+				iItemHeight = _items.Info(i).Height;
 
-				if ( ( posScrollY + iItemHeight >= 0) && posScrollY < this.ClientRectangle.Height)
+				if ( ( posScrollY + iItemHeight >= 0) && posScrollY < ClientRectangle.Height)
 				{
-					bounds.Location = new Point( this.AutoScrollPosition.X, posScrollY);
-					bounds.Size = new System.Drawing.Size( this.ClientRectangle.Right, iItemHeight);
+					bounds.Location = new Point( AutoScrollPosition.X, posScrollY);
+					bounds.Size = new Size( ClientRectangle.Right, iItemHeight);
 
 					//and draw
-					DrawItemState state = (m_SelectedItemIndices.Contains(i)) ? DrawItemState.Selected : DrawItemState.Default;
+					DrawItemState state = (_selectedItemIndices.Contains(i)) ? DrawItemState.Selected : DrawItemState.Default;
 					DrawItemEventArgs diea = new DrawItemEventArgs(
 						g,
-						this.Font,
+						Font,
 						bounds,
 						i,
 						state,
-						this.ForeColor,
-						this.BackColor);
+						ForeColor,
+						BackColor);
 					OnDrawItem(diea);
 				}
 
@@ -194,7 +195,7 @@ namespace ListBox
 				i++;
 			}
 
-			this.AutoScrollMinSize = new Size( this.Width - 30, height);
+			AutoScrollMinSize = new Size( Width - 30, height);
 		}
 
 
@@ -204,8 +205,8 @@ namespace ListBox
 		/// <param name="e"></param>
 		protected override void OnResize(EventArgs e)
 		{
-			for ( int i = 0; i < m_Items.Count; i++)
-				m_Items.Info(i).HeightValid = false;
+			for ( int i = 0; i < _items.Count; i++)
+				_items.Info(i).HeightValid = false;
 			base.OnResize (e);
 		}
 
@@ -215,17 +216,17 @@ namespace ListBox
 		/// <summary>
 		/// Tests which item the user has clicked.
 		/// </summary>
-		/// <param name="X"></param>
-		/// <param name="Y"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
 		/// <returns>The index of the clicked item</returns>
-		private int ItemHitTest(int X, int Y)
+		private int ItemHitTest(int x, int y)
 		{
-			int posY = this.AutoScrollPosition.Y;
-			for(int i=0; i< m_Items.Count; i++)
+			var posY = AutoScrollPosition.Y;
+			for(var i=0; i< _items.Count; i++)
 			{
-				posY += m_Items.Info(i).Height;
+				posY += _items.Info(i).Height;
 
-				if(Y < posY)
+				if(y < posY)
 				{
 					return i;
 				}
@@ -243,13 +244,13 @@ namespace ListBox
 		{
 			if(index == -1)
 			{
-				m_SelectedItemIndices.Clear();
-				m_SelectedItems.Clear();
+				_selectedItemIndices.Clear();
+				_selectedItems.Clear();
 			}
 			else
 			{
-				m_SelectedItemIndices.Add(index);
-				m_SelectedItems.Add(m_Items[index]);
+				_selectedItemIndices.Add(index);
+				_selectedItems.Add(_items[index]);
 			}
 
 			OnSelectedIndexChanged(new EventArgs());
@@ -262,8 +263,8 @@ namespace ListBox
 		/// <param name="index"></param>
 		private void RemoveSelectedItem(int index)
 		{
-			m_SelectedItemIndices.Remove(index);
-			m_SelectedItems.Remove(m_Items[index]);
+			_selectedItemIndices.Remove(index);
+			_selectedItems.Remove(_items[index]);
 			OnSelectedIndexChanged(new EventArgs());
 		}
 
@@ -273,26 +274,25 @@ namespace ListBox
 
 		public ListBoxList Items
 		{
-			get { return m_Items; }
+			get { return _items; }
 		}
 
 		public object SelectedItem
 		{
-			get 
+			get
 			{
-				if(m_SelectedItems.Count > 0)
-					return m_SelectedItems[0];
-				else
-					return null;
+			    if(_selectedItems.Count > 0)
+					return _selectedItems[0];
+			    return null;
 			}
-			set 
+		    set 
 			{
-				int pos = m_Items.IndexOf(value);
+				int pos = _items.IndexOf(value);
 				if(pos >= 0)
 				{
 					//clear list
-					m_SelectedItemIndices.Clear();
-					m_SelectedItems.Clear();
+					_selectedItemIndices.Clear();
+					_selectedItems.Clear();
 					
 					//add item
 					AddSelectedItem(pos);					
@@ -302,28 +302,27 @@ namespace ListBox
 
 		public ArrayList SelectedItems
 		{
-			get { return m_SelectedItems; }
+			get { return _selectedItems; }
 		}
 
 		public int SelectedIndex
 		{
-			get 
+			get
 			{
-				if(m_SelectedItemIndices.Count > 0)
-					return (int)m_SelectedItemIndices[0];
-				else
-					return -1;
+			    if(_selectedItemIndices.Count > 0)
+					return (int)_selectedItemIndices[0];
+			    return -1;
 			}
-			set
+		    set
 			{
-				if((value < m_Items.Count) && (value >= -1))
+				if((value < _items.Count) && (value >= -1))
 					AddSelectedItem(value);
 			}
 		}
 
 		public ArrayList SelectedItemIndices
 		{
-			get { return m_SelectedItemIndices; }
+			get { return _selectedItemIndices; }
 		}
 
 		#endregion
@@ -339,25 +338,25 @@ namespace ListBox
 			e.DrawFocusRectangle();			
 		
 			Rectangle bounds = e.Bounds;
-			Color TextColor = System.Drawing.SystemColors.ControlText;
+			Color textColor = SystemColors.ControlText;
 					
 			
 			//draw selected item background
 			if(e.State == DrawItemState.Selected)
 			{
-				using ( Brush b = new SolidBrush(System.Drawing.SystemColors.Highlight) )
+				using ( Brush b = new SolidBrush(SystemColors.Highlight) )
 				{
 					// Fill background;
 					e.Graphics.FillRectangle(b, e.Bounds);
 				}	
-				TextColor = System.Drawing.SystemColors.HighlightText;
+				textColor = SystemColors.HighlightText;
 			}
 			
-			using (SolidBrush TextBrush = new SolidBrush(TextColor))
+			using (SolidBrush textBrush = new SolidBrush(textColor))
 			{
 
 				//draw item the standard way
-				e.Graphics.DrawString(m_Items[e.Index].ToString(), this.Font, TextBrush, bounds.Left , bounds.Top);
+				e.Graphics.DrawString(_items[e.Index].ToString(), Font, textBrush, bounds.Left , bounds.Top);
 			}
 
 			//fire event
@@ -375,13 +374,13 @@ namespace ListBox
 		protected virtual void OnMeasureItem(MeasureItemEventArgs e)
 		{
 			//preset Height
-			e.ItemHeight = this.Font.Height;
+			e.ItemHeight = Font.Height;
 
 			if(MeasureItem != null)
 				MeasureItem(this, e);
 
 			// set the height
-			m_Items.Info( e.Index).Height = e.ItemHeight;
+			_items.Info( e.Index).Height = e.ItemHeight;
 		}
 
 		protected virtual void OnSelectedIndexChanged(EventArgs e)
@@ -400,11 +399,11 @@ namespace ListBox
 		private void ItemInserted( int index)
 		{
 			// Adjust selected item indices
-			for ( int i = 0; i < m_SelectedItemIndices.Count; i++)
+			for ( int i = 0; i < _selectedItemIndices.Count; i++)
 			{
-				int selIndex = (int)m_SelectedItemIndices[i];
+				int selIndex = (int)_selectedItemIndices[i];
 				if ( selIndex >= index)
-					m_SelectedItemIndices[i] = selIndex+1;
+					_selectedItemIndices[i] = selIndex+1;
 			}
 
 			// Adjust the autoscrollposition, so that the newly added item is shown.

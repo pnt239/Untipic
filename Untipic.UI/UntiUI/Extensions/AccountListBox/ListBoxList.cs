@@ -14,10 +14,10 @@
 //  Changed by R. Lelieveld, SimVA GmbH.
 //
 // ////////////////////////////////////////////////////////////////////////////
-using System;
+
 using System.Collections;
 
-namespace ListBox
+namespace Untipic.UI.UntiUI.Extensions.AccountListBox
 {
 	/// <summary>
 	/// EventHanlder for adding items.
@@ -37,12 +37,12 @@ namespace ListBox
 		/// <summary>
 		/// Internal messages list.
 		/// </summary>
-		private ArrayList _alMessages;
+		private readonly ArrayList _alMessages;
 
 		/// <summary>
 		/// Internal information about the messages.
 		/// </summary>
-		private ArrayList _alMessagesInfo;
+		private readonly ArrayList _alMessagesInfo;
 
 		/// <summary>
 		/// Number of items in the list.

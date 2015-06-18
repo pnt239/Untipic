@@ -11,62 +11,62 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 //
 //  Original Code from Christian Tratz (via www.codeproject.com).
-//  Changed by R. Lelieveld, SimVA GmbH.
+//  Changed by R. Lelieveld, SimVA GmbH, Pham Ngoc Thanh
 //
 // ////////////////////////////////////////////////////////////////////////////
-using System;
 
-namespace ListBox
+using System.Drawing;
+
+namespace Untipic.UI.UntiUI.Extensions.AccountListBox
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	public class ParseMessageEventArgs : System.EventArgs
 	{
-		private string m_MessageHeader;
-		private string m_MessageText;
-		private string m_ParseSource;
-		private ParseMessageType m_Type = ParseMessageType.None;
+		private string _messageHeader;
+		private string _messageText;
+		private string _parseSource;
+	    private Image _thumbImage;
 
-		public ParseMessageEventArgs() : base()
-		{		}
+	    public ParseMessageEventArgs()
+	    {
+	    }
 
-		public ParseMessageEventArgs(ParseMessageType type, string MessageHeader, string MessageText) : this()
+		public ParseMessageEventArgs(string messageHeader, string messageText) : this()
 		{		
-			m_MessageHeader = MessageHeader;
-			m_MessageText = MessageText;
-			m_Type = type;
+			_messageHeader = messageHeader;
+			_messageText = messageText;
+            _thumbImage = null;
 		}
 
-		public ParseMessageEventArgs(ParseMessageType type, string LineHeader, string MessageText, string Source) : this(type,LineHeader,MessageText)
+		public ParseMessageEventArgs(string lineHeader, string messageText, string source) : this(lineHeader,messageText)
 		{		
-			m_ParseSource = Source;			
+			_parseSource = source;			
 		}
 
 		public string MessageText
 		{
-			get { return m_MessageText; }
-			set { m_MessageText = value; }
+			get { return _messageText; }
+			set { _messageText = value; }
 		}
 
 		public string Source
 		{
-			get { return m_ParseSource; }
-			set { m_ParseSource = value; }
+			get { return _parseSource; }
+			set { _parseSource = value; }
 		}
 
 		public string LineHeader
 		{
-			get { return m_MessageHeader; }
-			set { m_MessageHeader = value; }
+			get { return _messageHeader; }
+			set { _messageHeader = value; }
 		}
 
-		public ParseMessageType MessageType
+		public Image ThumbImage
 		{
-			get { return m_Type; }
-			set { m_Type = value; }
+            get { return _thumbImage; }
+            set { _thumbImage = value; }
 		}
 	}
-
-	public enum ParseMessageType  {	None = -1, Info = 0, Warning = 1, Error = 2, Question = 3 };
 }

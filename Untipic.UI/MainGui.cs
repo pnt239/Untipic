@@ -57,6 +57,9 @@ namespace Untipic.UI
             SwitchPanel(panDraw);
             RelayoutSidePanel();
             DrawOutlineFillPanelSide();
+
+            lsbAccount.Items.Add(new UntiUI.Extensions.AccountListBox.ParseMessageEventArgs("Thanh", "Test") { ThumbImage = Properties.Resources.User });
+            lsbAccount.Items.Add(new UntiUI.Extensions.AccountListBox.ParseMessageEventArgs("Thanh", "Test") { ThumbImage = Properties.Resources.User });
         }
 
         private void SwitchPanel(Panel panel)
@@ -89,6 +92,10 @@ namespace Untipic.UI
             panRightSideNavigation.Width = 250;
             panRightSideNavigation.Height = panDrawContainer.Height;
             panRightSideNavigation.Location = new Point(panDrawContainer.Width - panRightSideNavigation.Width);
+
+            drawPad.Location = new Point(0, 0);
+            drawPad.Width = panDrawContainer.Width;
+            drawPad.Height = panDrawContainer.Height;
         }
 
         private void DrawOutlineFillPanelSide()

@@ -94,12 +94,12 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFontSelect = new Untipic.UI.UntiUI.UntiButton();
             this.lbFontPreview = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panRightSideNavigation = new System.Windows.Forms.Panel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label26 = new System.Windows.Forms.Label();
-            this.btnRemoveAccount = new UntiUI.UntiButton();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.btnRemoveAccount = new Untipic.UI.UntiUI.UntiButton();
+            this.lsbAccount = new Untipic.UI.UntiUI.Extensions.AccountListBox.AccountListBox();
+            this.drawPad = new Untipic.UI.UntiUI.DrawPad.DrawPad();
             this.panMessage = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -522,8 +522,8 @@
             this.panDrawContainer.Controls.Add(this.panLeftSideFill);
             this.panDrawContainer.Controls.Add(this.panLeftSideOutline);
             this.panDrawContainer.Controls.Add(this.panLeftSideFont);
-            this.panDrawContainer.Controls.Add(this.panel5);
             this.panDrawContainer.Controls.Add(this.panRightSideNavigation);
+            this.panDrawContainer.Controls.Add(this.drawPad);
             this.panDrawContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panDrawContainer.Location = new System.Drawing.Point(53, 0);
             this.panDrawContainer.Margin = new System.Windows.Forms.Padding(0);
@@ -979,13 +979,6 @@
             this.lbFontPreview.Text = "Abc 123";
             this.lbFontPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(293, 126);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(86, 239);
-            this.panel5.TabIndex = 2;
-            // 
             // panRightSideNavigation
             // 
             this.panRightSideNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1004,7 +997,7 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.Controls.Add(this.label26, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.btnRemoveAccount, 0, 3);
-            this.tableLayoutPanel15.Controls.Add(this.listBox2, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.lsbAccount, 0, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
@@ -1030,23 +1023,50 @@
             // btnRemoveAccount
             // 
             this.btnRemoveAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveAccount.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnRemoveAccount.Location = new System.Drawing.Point(5, 402);
             this.btnRemoveAccount.Margin = new System.Windows.Forms.Padding(5);
             this.btnRemoveAccount.Name = "btnRemoveAccount";
+            this.btnRemoveAccount.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnRemoveAccount.Size = new System.Drawing.Size(148, 25);
             this.btnRemoveAccount.TabIndex = 2;
             this.btnRemoveAccount.Text = "Remove";
             this.btnRemoveAccount.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // lsbAccount
             // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 17;
-            this.listBox2.Location = new System.Drawing.Point(3, 53);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(152, 341);
-            this.listBox2.TabIndex = 3;
+            this.lsbAccount.AutoScroll = true;
+            this.lsbAccount.AutoScrollMinSize = new System.Drawing.Size(122, 0);
+            this.lsbAccount.BackColor = System.Drawing.Color.White;
+            this.lsbAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsbAccount.Location = new System.Drawing.Point(3, 53);
+            this.lsbAccount.Name = "lsbAccount";
+            this.lsbAccount.SelectedIndex = -1;
+            this.lsbAccount.SelectedItem = null;
+            this.lsbAccount.Size = new System.Drawing.Size(152, 341);
+            this.lsbAccount.TabIndex = 3;
+            this.lsbAccount.ThumbImageSize = 32;
+            // 
+            // drawPad
+            // 
+            this.drawPad.AutoScroll = true;
+            this.drawPad.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            this.drawPad.AutoScrollMinSize = new System.Drawing.Size(830, 1157);
+            this.drawPad.BackColor = System.Drawing.SystemColors.Control;
+            this.drawPad.CurrentCommand = Untipic.UI.UntiUI.DrawPad.DrawPadCommand.None;
+            this.drawPad.FillColor = System.Drawing.Color.Transparent;
+            this.drawPad.Location = new System.Drawing.Point(293, 126);
+            this.drawPad.Margin = new System.Windows.Forms.Padding(0);
+            this.drawPad.Name = "drawPad";
+            this.drawPad.OutlineColor = System.Drawing.Color.Black;
+            this.drawPad.OutlineDash = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.drawPad.OutlineWidth = 2F;
+            this.drawPad.Resolution = 37.62F;
+            this.drawPad.Size = new System.Drawing.Size(86, 239);
+            this.drawPad.TabIndex = 2;
+            this.drawPad.ViewportHeith = 1117;
+            this.drawPad.ViewportWidth = 790;
+            this.drawPad.Zoom = 1F;
             // 
             // panMessage
             // 
@@ -1530,6 +1550,7 @@
             this.ClientSize = new System.Drawing.Size(554, 613);
             this.Controls.Add(this.tlpMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainGui";
             this.Text = "Untipic";
             this.tlpMain.ResumeLayout(false);
@@ -1643,7 +1664,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panDrawContainer;
-        private System.Windows.Forms.Panel panel5;
+        private UntiUI.DrawPad.DrawPad drawPad;
         private System.Windows.Forms.Panel panRightSideNavigation;
         private System.Windows.Forms.Panel panLeftSideFill;
         private System.Windows.Forms.Panel panLeftSideFont;
@@ -1692,7 +1713,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label26;
         private UntiUI.UntiButton btnRemoveAccount;
-        private System.Windows.Forms.ListBox listBox2;
+        private UntiUI.Extensions.AccountListBox.AccountListBox lsbAccount;
 
     }
 }

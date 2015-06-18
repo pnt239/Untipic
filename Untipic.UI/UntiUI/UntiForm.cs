@@ -67,7 +67,7 @@ namespace Untipic.UI.UntiUI
                 _borderColor = Color.FromArgb(0xcc, 0xcc, 0xcc);
                 _borderWidth = BORDER_WIDTH;
                 _formIconPosition = new Point(_borderWidth + 5, _borderWidth + 5);
-                _formCaptionPosition = new PointF(_formIconPosition.X + Icon.Size.Width + 5, _formIconPosition.Y + 6f);
+                _formCaptionPosition = new PointF(_formIconPosition.X + 48 + 5, _formIconPosition.Y + 6f);
                 _borderStyle = UntiBorderStyle.Sizable;
 
                 // Set serveral option for paint
@@ -187,9 +187,9 @@ namespace Untipic.UI.UntiUI
                     if (_borderStyle != UntiBorderStyle.None)
                     {
                         // Draw Icon
-                        e.Graphics.DrawIcon(Icon, _formIconPosition.X, _formIconPosition.Y);
+                        e.Graphics.DrawIcon(Icon, new Rectangle(_formIconPosition, new Size(48, 48)));
 
-                        // Draw Caption
+                        // Draw Caption/Title
                         using (var b = new SolidBrush(Color.Black))
                         {
                             var f = _theme.FormTitleFont;

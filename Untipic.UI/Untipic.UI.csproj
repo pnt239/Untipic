@@ -98,9 +98,13 @@
     <Compile Include="UntiUI\EventArguments\ShapeToolEventArgs.cs" />
     <Compile Include="UntiUI\Extensions\AccountListBox\ItemInfo.cs" />
     <Compile Include="UntiUI\Extensions\AccountListBox\ListBoxList.cs" />
-    <Compile Include="UntiUI\Extensions\AccountListBox\MessageListBox.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\AccountListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UntiUI\Extensions\AccountListBox\ParseMessageEventArgs.cs" />
-    <Compile Include="UntiUI\Extensions\AccountListBox\ResizableListBox.cs" />
+    <Compile Include="UntiUI\Extensions\AccountListBox\ResizableListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UntiUI\Extensions\ColorEditor.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -201,8 +205,9 @@
     <EmbeddedResource Include="UntiUI\DrawPad\DrawPad.resx">
       <DependentUpon>DrawPad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UntiUI\Extensions\AccountListBox\MessageListBox.resx" />
-    <EmbeddedResource Include="UntiUI\Extensions\AccountListBox\ResizableListBox.resx" />
+    <EmbeddedResource Include="UntiUI\Extensions\AccountListBox\AccountListBox.resx">
+      <DependentUpon>AccountListBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Accounts.png" />
@@ -232,6 +237,7 @@
     <Content Include="Resources\Triangle.png" />
     <Content Include="Resources\Undo.png" />
     <Content Include="Resources\Up.png" />
+    <None Include="Resources\User.png" />
     <Content Include="Resources\ZoomIn.png" />
     <Content Include="Resources\ZoomOut.png" />
   </ItemGroup>

@@ -14,10 +14,8 @@
 //  Changed by R. Lelieveld, SimVA GmbH.
 //
 // ////////////////////////////////////////////////////////////////////////////
-using System;
-using System.Collections;
 
-namespace ListBox
+namespace Untipic.UI.UntiUI.Extensions.AccountListBox
 {
 	/// <summary>
 	/// This class provides more informations about the items in the listbox.
@@ -61,7 +59,7 @@ namespace ListBox
 		/// <summary>
 		/// Message from user.
 		/// </summary>
-		private ParseMessageEventArgs _pmeaMessage;
+		private readonly ParseMessageEventArgs _pmeaMessage;
 
 		/// <summary>
 		/// Message from user.
@@ -83,15 +81,16 @@ namespace ListBox
 		}
 
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="Height"></param>
-		/// <param name="?"></param>
-		public ItemInfo( int Height, bool HeightValid, ParseMessageEventArgs pmea)
+	    /// <summary>
+	    /// Constructor.
+	    /// </summary>
+	    /// <param name="height"></param>
+	    /// <param name="heightValid"></param>
+	    /// <param name="pmea"></param>
+	    public ItemInfo( int height, bool heightValid, ParseMessageEventArgs pmea)
 		{
-			_iHeight = Height;
-			_bHeightValid = HeightValid;
+			_iHeight = height;
+			_bHeightValid = heightValid;
 			_pmeaMessage = pmea;
 		}
 	}
