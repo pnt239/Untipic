@@ -23,7 +23,7 @@ namespace Untipic.UI
 
         public MainGui() :
 #if MONO
-           base(true)
+            base(true)
 #else
             base(false)
 #endif
