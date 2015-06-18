@@ -134,6 +134,7 @@
     <Compile Include="UntiUI\Extensions\ToolStripFillButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UntiUI\Extensions\ToolStripConnector.cs" />
     <Compile Include="UntiUI\Extensions\ToolStripOutlineButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -237,6 +238,9 @@
     <Content Include="Resources\Triangle.png" />
     <Content Include="Resources\Undo.png" />
     <Content Include="Resources\Up.png" />
+    <EmbeddedResource Include="UntiUI\DrawPad\Cursors\Brush.cur" />
+    <EmbeddedResource Include="UntiUI\DrawPad\Cursors\DirectSelection.cur" />
+    <EmbeddedResource Include="UntiUI\DrawPad\Cursors\Selection.cur" />
     <None Include="Resources\User.png" />
     <Content Include="Resources\ZoomIn.png" />
     <Content Include="Resources\ZoomOut.png" />

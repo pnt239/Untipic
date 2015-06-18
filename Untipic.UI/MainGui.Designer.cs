@@ -1049,6 +1049,9 @@
             // 
             // drawPad
             // 
+            this.drawPad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.drawPad.AutoScroll = true;
             this.drawPad.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.drawPad.AutoScrollMinSize = new System.Drawing.Size(830, 1157);

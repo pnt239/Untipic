@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Untipic.Entity;
 using Untipic.UI.UntiUI;
+using Untipic.UI.UntiUI.Extensions;
+using Untipic.UI.UntiUI.DrawPad;
 
 namespace Untipic.UI
 {
@@ -16,6 +19,7 @@ namespace Untipic.UI
         private Panel _currentPanel;
         private Panel _lastPanel;
         private Panel _currentSidePanel;
+        private ToolStripConnector _toolStripConnector;
 
         public MainGui() :
 #if MONO
@@ -57,9 +61,9 @@ namespace Untipic.UI
             SwitchPanel(panDraw);
             RelayoutSidePanel();
             DrawOutlineFillPanelSide();
-
-            lsbAccount.Items.Add(new UntiUI.Extensions.AccountListBox.ParseMessageEventArgs("Thanh", "Test") { ThumbImage = Properties.Resources.User });
-            lsbAccount.Items.Add(new UntiUI.Extensions.AccountListBox.ParseMessageEventArgs("Thanh", "Test") { ThumbImage = Properties.Resources.User });
+            
+            // Connect event
+            PerformConnect();
         }
 
         private void SwitchPanel(Panel panel)
@@ -164,9 +168,32 @@ namespace Untipic.UI
                 }
         }
 
-        private void BackToPrePanel()
+        private void PerformConnect()
         {
-            SwitchPanel(_lastPanel);
+            // Tools toolstrip manager initialize
+            _toolStripConnector = new ToolStripConnector(true);
+            // connect selection
+            _toolStripConnector.Connect(tsbToolSelection,
+                new CommandObject(DrawPadCommand.Selection), drawPad.ChangeTool);
+            // connect direct selection
+            _toolStripConnector.Connect(tsbToolDirectSel,
+                new CommandObject(DrawPadCommand.DirectSelection), drawPad.ChangeTool);
+            // connect draw text
+            _toolStripConnector.Connect(tsbToolText,
+                new CommandObject(DrawPadCommand.DrawText), drawPad.ChangeTool);
+            // connect draw shape
+            _toolStripConnector.Connect(tsbToolShape,
+                new CommandObject(DrawPadCommand.DrawShape,
+                    new Line()), drawPad.ChangeTool);
+            // connect brush
+            _toolStripConnector.Connect(tsbToolBrush,
+                new CommandObject(DrawPadCommand.Brush, new FreePencil()), drawPad.ChangeTool);
+            // connect erase
+            _toolStripConnector.Connect(tsbToolEraser,
+                new CommandObject(DrawPadCommand.Eraser, new FreePencil()), drawPad.ChangeTool);
+            // connect bucket
+            _toolStripConnector.Connect(tsbToolBucket,
+                new CommandObject(DrawPadCommand.Bucket), drawPad.ChangeTool);
         }
 
         private void tsbCreateSave_Click(object sender, EventArgs e)

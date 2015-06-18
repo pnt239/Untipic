@@ -9,7 +9,7 @@ namespace Untipic.UI.UntiUI.DrawPad
         public static Stream GetResourceStream(string resourceName)
         {
             return Assembly.GetExecutingAssembly().GetManifestResourceStream(
-                    "Untipic.Cursors." + resourceName);
+                    "Untipic.UI.UntiUI.DrawPad.Cursors." + resourceName);
         }
 
         public static Cursor GetSelectionCursor()
