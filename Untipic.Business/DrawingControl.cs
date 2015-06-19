@@ -140,8 +140,11 @@ namespace Untipic.Business
 
         public void MoveTo(Point p)
         {
-            X = p.X - _dx;
-            Y = p.Y - _dy;
+            //X = p.X - _dx;
+            //Y = p.Y - _dy;
+            _rec.X = p.X - _dx;
+            _rec.Y = p.Y - _dy;
+            OnLocationChanged();
         }
 
         public virtual void OnChangeX(int val)
@@ -309,48 +312,56 @@ namespace Untipic.Business
             _controlPoints[0].AddControlDependY(_controlPoints[2]);
             _controlPoints[0].ChangedX += ControlPoint_Changed;
             _controlPoints[0].ChangedY += ControlPoint_Changed;
+            _controlPoints[0].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[1].Cursor = Cursors.SizeNS;
             _controlPoints[1].IsLockX = true;
             _controlPoints[1].AddControlDependY(_controlPoints[0]);
             _controlPoints[1].AddControlDependY(_controlPoints[2]);
             _controlPoints[1].ChangedY += ControlPoint_Changed;
+            _controlPoints[1].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[2].Cursor = Cursors.SizeNESW;
             _controlPoints[2].AddControlDependX(_controlPoints[4]);
             _controlPoints[2].AddControlDependY(_controlPoints[0]);
             _controlPoints[2].ChangedX += ControlPoint_Changed;
             _controlPoints[2].ChangedY += ControlPoint_Changed;
+            _controlPoints[2].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[3].Cursor = Cursors.SizeWE;
             _controlPoints[3].IsLockY = true;
             _controlPoints[3].AddControlDependX(_controlPoints[2]);
             _controlPoints[3].AddControlDependX(_controlPoints[4]);
             _controlPoints[3].ChangedX += ControlPoint_Changed;
+            _controlPoints[3].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[4].Cursor = Cursors.SizeNWSE;
             _controlPoints[4].AddControlDependX(_controlPoints[2]);
             _controlPoints[4].AddControlDependY(_controlPoints[6]);
             _controlPoints[4].ChangedX += ControlPoint_Changed;
             _controlPoints[4].ChangedY += ControlPoint_Changed;
+            _controlPoints[4].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[5].Cursor = Cursors.SizeNS;
             _controlPoints[5].IsLockX = true;
             _controlPoints[5].AddControlDependY(_controlPoints[6]);
             _controlPoints[5].AddControlDependY(_controlPoints[4]);
             _controlPoints[5].ChangedY += ControlPoint_Changed;
+            _controlPoints[5].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[6].Cursor = Cursors.SizeNESW;
             _controlPoints[6].AddControlDependX(_controlPoints[0]);
             _controlPoints[6].AddControlDependY(_controlPoints[4]);
             _controlPoints[6].ChangedX += ControlPoint_Changed;
             _controlPoints[6].ChangedY += ControlPoint_Changed;
+            _controlPoints[6].LocationChanged += ControlPoint_Changed;
 
             _controlPoints[7].Cursor = Cursors.SizeWE;
             _controlPoints[7].IsLockY = true;
             _controlPoints[7].AddControlDependX(_controlPoints[0]);
             _controlPoints[7].AddControlDependX(_controlPoints[6]);
             _controlPoints[7].ChangedX += ControlPoint_Changed;
+            _controlPoints[7].LocationChanged += ControlPoint_Changed;
             Cursor = Cursors.SizeAll;
         }
 
@@ -612,10 +623,13 @@ namespace Untipic.Business
 
         public bool BeginTranslation(Point p)
         {
+            // Get shape that mouse is over
             _hitControl = _controlBox.HitTest(p);
             if (_hitControl == null)
                 return false;
 
+            // mark begin point for calculate var between new point and old point
+            // when move mouse
             _hitControl.SetAnchor(p);
             return true;
         }

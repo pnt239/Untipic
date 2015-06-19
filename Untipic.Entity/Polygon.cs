@@ -5,7 +5,7 @@
         public Polygon()
         {
             CanResize = false;
-            CanMove = false;
+            CanMove = true;
         }
         /// <summary>
         /// Gets the type of the shape.
